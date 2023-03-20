@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Library Management System</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Marck+Script&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b1181b7862.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Gentium+Book+Plus:ital,wght@1,700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="Container1" class="summa">
+      <div id='inputsDiv1'>
+        <h2>Sign In</h2>
+        <div class='input-box1'>
+          <input class="input1" type='number' required id='signInPhoneNumber' autocomplete="off">
+          <label class="label1" for=''>Phone Number</label>
+        </div>
+        <div class='input-box1' id='pass'>
+          <input class="input1" type='password' required id='signInPassword' autocomplete="off">
+          <i class='fa-regular fa-eye-slash' id='showPassword' onclick="showingPassword('signInPassword','pass','showPassword')"></i>
+          <label class="label1" for=''>Password</label>
+        </div>
+        <button id="button1" type='submit' onclick='login()'>Login</button>
+        <span class='SignUp-link'>Don't have an account? <a href='#' id='SignUp' onclick='SignUpProcess()'>Sign Up</a>
+        </span>
+      </div>
+    </div>
+    <div id="SignUpContainer" class="summa">
+      <div id='inputsDiv1'>
+        <h2>Sign Up</h2>
+        <div class='input-box1'>
+          <input class="input1" type='text' required id='FirstName' autocomplete="off">
+          <label class="label1" for=''>First Name</label>
+        </div>
+        <div class='input-box1'>
+          <input class="input1" type='text' required id='LastName' autocomplete="off">
+          <label class="label1" for=''>Last Name</label>
+        </div>
+        <div class='input-box1'>
+          <input class="input1" type='date' required id="DateOfBirth" max='2013-01-01' autocomplete="off"/>
+          <label class="label1" for=''>Date of Birth</label>
+        </div>
+        <div class='input-box1' input1>
+             <select id='Gender' class="input1">
+            	<option>Male</option>
+                <option>Female</option>
+             </select>
+          <label class="label1" for=''>Gender</label>
+        </div>
+        <div class='input-box1'>
+          <input class="input1" type='number' required id='PhoneNumber' autocomplete="off">
+          <label class="label1" for=''>Phone Number</label>
+        </div>
+        <div class='input-box1' id='pass1'>
+          <input class="input1" type='password' required id='signUpPassword' autocomplete="off">
+          <i class='fa-regular fa-eye-slash' id='showPassword1' onclick="showingPassword('signUpPassword','pass1','showPassword1')"></i>
+          <label class="label1" for=''>Password</label>
+        </div>
+        <button id="button1" type='submit' onclick='SignUp()'>Submit</button>
+        <span class='SignUp-link'>Do you have an account? <a href='#' id='SignUp' onclick='SignInProcess()'>Sign In</a>
+        </span>
+      </div>
+    </div>
+    <div id='fullContainer' class="summa1">
+      <div id='contents'>
+        <div id='LogoImage'>
+          <img src='logo.png' id='size5' />
+        </div>
+        <div id='contentsBox'>
+          <div class='categories' id='dashboard'>
+            <iconify-icon icon='fa:dashboard' class='alignment'></iconify-icon>
+            <span class='textOne'>DASHBOARD</span>
+          </div>
+          <div class='categories' id='allBook'>
+            <i class='fa-solid fa-book-open alignment'></i>
+            <span class='textOne'>ALL BOOKS</span>
+          </div>
+          <div class='categories' id='addBook'>
+            <i class='fa-solid fa-book-medical alignment'></i>
+            <span class='textOne'>ADD BOOKS</span>
+          </div>
+          <div class='categories' id="updateBook">
+             <i class="fa-solid fa-book alignment"></i>
+            <span class='textOne'>UPDATE BOOKS</span>
+          </div>
+          <div class='categories' id='issueBooks'>
+            <i class='fa-sharp fa-solid fa-book-open-reader alignment'></i>
+            <span class='textOne'>ISSUE BOOKS DETAILS</span>
+          </div>
+          <div class='categories' id='members'>
+            <iconify-icon icon='mingcute:user-3-fill' class='alignment'></iconify-icon>
+            <span class='textOne'>MEMBERS DETAILS</span>
+          </div>
+          <div class='categories' id='terms'>
+            <iconify-icon icon='bxs:lock-open' class='alignment'></iconify-icon>
+            <span class='textOne'>TERMS & CONDITIONS</span>
+          </div>
+          <div class='categories' id='settings'>
+            <iconify-icon icon='material-symbols:settings-rounded' class='alignment'></iconify-icon>
+            <span class='textOne'>SETTINGS</span>
+          </div>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='navigationBar'>
+          <div id='profileDiv'>
+            <i class='fa-solid fa-envelope' id='size1' class="hiding"></i>
+            <i class='fa-regular fa-bell' id='size2' class="hiding"></i>
+            <div id='profileImage'></div>
+            <iconify-icon icon='material-symbols:arrow-drop-down' class='align1' onclick="logOut()"></iconify-icon>
+          </div>
+        </div>
+        <div id="main" class="summa">
+          <span id='greet'>Welcome to Dashboard</span>
+          <div id='statusofdashboard'>
+            <div class='innerDivforBooks' id="yellowShadow">
+              <img src='7.png' class='size' />
+              <span class='text1'>Logged in User</span>
+              <span id='q'>10</span>
+            </div>
+            <div class='innerDivforBooks' id="redShadow">
+              <img src='5.png' class='size' />
+              <span class='text1'>Total No of Books</span>
+              <span id='r'>10</span>
+            </div>
+            <div class='innerDivforBooks' id="greenShadow">
+              <img src='6.png' class='size' />
+              <span class='text1'>Total No of User</span>
+              <span id='s'>10</span>
+            </div>
+            <div class='innerDivforBooks' id="blueShadow">
+              <img src='8.png' class='size' />
+              <span class='text1'>Logged out User</span>
+              <span id='t'>10</span>
+            </div>
+          </div>
+          <div id='resource'>
+            <div id='NewUser'>
+              <div class='headingDiv'>
+                <span class='text3'>New User</span>
+                <span id='phno'>PH NO</span>
+                <span id='tbi'>Total Book Issued</span>
+              </div>
+            </div>
+            <div id='NewBooks'>
+              <div class='headingDiv'>
+                <span class='text3'>New Books</span>
+                <span id='exp'>Author Name</span>
+                <span id='isbn'>ISBN No</span>
+                <span id='isd'>Issue date</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="allBookswholeDiv" class="summa">
+          <div id='imageDiv'>
+            <img src='libr.jpg' width='100%' id="iyyanar"/>
+          </div>
+          <span id='heading1'>Library Management System</span>
+          <span id='subHeading'>1,00,000+ Books from thousands of inspirational authors</span>
+          <div id='seacrhBox'>
+            <div id='inputSearchDiv'>
+              <input type='text' placeholder='Find a Book ....' id='search' autocomplete="off" required>
+              <i class='fa-solid fa-magnifying-glass' id='searchbutton'></i>
+            </div>
+            <div id='Categories'>
+              <select id='types'>
+                <option>None</option>
+                <option>General Knowledge</option>
+                <option>Psychology</option>
+                <option>Philosophy</option>
+                <option>Religion</option>
+                <option>Mythology</option>
+                <option>Story</option>
+                <option>Biography</option>
+                <option>Social Sciences</option>
+                <option>Folklore</option>
+                <option>Languages</option>
+                <option>History</option>
+                <option>Grammar</option>
+                <option>Maths</option>
+                <option>Science</option>
+                <option>Medicine</option>
+                <option>Technology</option>
+                <option>Arts</option>
+                <option>Entertainment</option>
+                <option>Literature</option>
+                <option>Geography</option>
+              </select>
+            </div>
+          </div>
+		   <div id='booksContainer1'>
+          	<div id='booksContainerInner'>
+          	</div>
+          </div>         
+        </div>
+        <div id="addBookswholeDiv" class="summa">
+          <img src="13.png" class="size6" />
+          <span id="size8">Add Books</span>
+          <div id="container" class="summa">
+            <div id="Container">
+              <div id='inputsDiv'>
+                <div class='input-box'>
+                  <input type='number' required id='IsbnNo'>
+                  <label for=''>ISBN Number</label>
+                </div>
+                <div class='input-box'>
+                  <input type='text' required id='BookName'>
+                  <label for=''>Book Name</label>
+                </div>
+                <div class='input-box'>
+                  <input type='text' id="AuthorName" required />
+                  <label for=''>Author Name</label>
+                </div>
+                <div class='input-box'>
+                  <select id='category'>
+              		  <option>None</option>
+             		  <option>General Knowledge</option>
+                	  <option>Psychology</option>
+                	  <option>Philosophy</option>
+                	  <option>Religion</option>
+              		  <option>Mythology</option>
+              		  <option>Story</option>
+              		  <option>Biography</option>
+              		  <option>Social Sciences</option>
+              		  <option>Folklore</option>
+             		  <option>Languages</option>
+             		  <option>History</option>
+              		  <option>Grammar</option>
+             	      <option>Maths</option>
+             		  <option>Science</option>
+             		  <option>Medicine</option>
+             		  <option>Technology</option>
+             		  <option>Arts</option>
+             		  <option>Entertainment</option>
+             		  <option>Literature</option>
+             		  <option>Geography</option>
+                  </select>
+                  <label for="" id="text6">Category</label>
+                </div>
+                <div class='input-box'>
+                  <input type='number' required id='pages'>
+                  <label for=''>Pages</label>
+                </div>
+                <div class='input-box'>
+                  <input type='Date' required id='PublishedDate'>
+                  <label for=''>Published Date</label>
+                </div>
+                <button type='submit' onclick='nextPage()'>Next</button>
+              </div>
+            </div>
+          </div>
+          <div id="container5" class="summa">
+            <div id="Container5">
+              <div id='inputsDiv'>
+                <i class='fa-solid fa-chevron-left' id='backButtonSize1' onclick='previous()'></i>
+                <div class='input-box'>
+                  <input type='number' required id='Available_Count'>
+                  <label for=''>Available Count</label>
+                </div>
+                <div class='input-box'>
+                  <select id='Floor_No'>
+              		  <option>None</option>
+             		  <option>First Floor</option>
+                	  <option>Second Floor</option>
+             	  </select>                  
+             	  <label for='' id="text6">Floor No</label>
+                </div>
+                <div class='input-box'>
+                  <select id='Department'>
+              		  <option>None</option>
+             		  <option>General Knowledge</option>
+                	  <option>Psychology</option>
+                	  <option>Philosophy</option>
+                	  <option>Religion</option>
+              		  <option>Mythology</option>
+              		  <option>Story</option>
+              		  <option>Biography</option>
+              		  <option>Social Sciences</option>
+              		  <option>Folklore</option>
+             		  <option>Languages</option>
+             		  <option>History</option>
+              		  <option>Grammar</option>
+             	      <option>Maths</option>
+             		  <option>Science</option>
+             		  <option>Medicine</option>
+             		  <option>Technology</option>
+             		  <option>Arts</option>
+             		  <option>Entertainment</option>
+             		  <option>Literature</option>
+             		  <option>Geography</option>
+                  </select>
+                  <label for="" id="text6">Department</label>
+                </div>
+                <div class='input-box'>
+                  <input type='number' required id='Shelve_Number'>
+                  <label for=''>Shelve Number</label>
+                </div>
+                <button type='submit' onclick='addBooksSubmit()'>Submit</button>
+              </div>
+            </div>
+          </div>
+          <div id="forBookDetailsAdded">
+            <span id ="heading12">Book Details</span>
+              <div id="UpdatedBookDetails"></div>
+              <span id="Success">Successfully Added</span>
+          </div>
+          <img src="text.png" id="size9" />
+        </div>
+        <div id="updateBookDetail" class="summa">
+          <img src="13.png" class="size6" />
+          <span id="size11">Update Book Details</span>
+          <span id="heading11">Book Details</span>
+           <div id="UpdateBookByIsbnNo">           
+           <input type="number" placeholder="Enter the ISBN Number of Book" id="inputIsbnNo" autocomplete="off" required/>
+           <i class='fa-solid fa-magnifying-glass' id='searchbuttonforUserPhoneNo' onclick="searchTheUpdatedBook()"></i>
+           </div>
+          <div id="UpdatedBookDetail"></div>
+           <div id="container2">
+            <div id="Container2">
+              <div id='inputsDiv'>
+                <div class='input-box'>
+                  <input type='number' required id='IsbnNo1'>
+                  <label for=''>ISBN Number</label>
+                </div>
+                <div class='input-box'>
+                  <input type='text' required id='BookName1'>
+                  <label for=''>Book Name</label>
+                </div>
+                <div class='input-box'>
+                  <input type='text' id="AuthorName1" required />
+                  <label for=''>Author Name</label>
+                </div>
+                <div class='input-box'>
+                  <select id='category1'>
+                		<option>None</option>
+                		<option>General Knowledge</option>
+                		<option>Psychology</option>
+                		<option>Philosophy</option>
+                		<option>Religion</option>
+                		<option>Mythology</option>
+                		<option>Story</option>
+                		<option>Biography</option>
+                		<option>Social Sciences</option>
+                		<option>Folklore</option>
+                		<option>Languages</option>
+                		<option>History</option>
+                		<option>Grammar</option>
+                		<option>Maths</option>
+                		<option>Science</option>
+                		<option>Medicine</option>
+                		<option>Technology</option>
+                		<option>Arts</option>
+                		<option>Entertainment</option>
+                		<option>Literature</option>
+                		<option>Geography</option>
+                  </select>
+                  <label for="" id="text61">Category</label>
+                </div>
+                <div class='input-box'>
+                  <input type='number' required id='pages1'>
+                  <label for=''>Pages</label>
+                </div>
+                <div class='input-box'>
+                  <input type='Date' required id='PublishedDate1'>
+                  <label for=''>Published Date</label>
+                </div>
+                <button type='submit' onclick='nextPage1()'>Next</button>
+              </div>
+            </div>
+          </div>
+          <div id="container6" class="summa">
+            <div id="Container6">
+              <div id='inputsDiv'>
+                <i class='fa-solid fa-chevron-left' id='backButtonSize2' onclick='previous1()'></i>
+                <div class='input-box'>
+                  <input type='number' required id='Available_Count1'>
+                  <label for=''>Available Count</label>
+                </div>
+                <div class='input-box'>
+                  <select id='Floor_No1'>
+              		  <option>None</option>
+             		  <option>First Floor</option>
+                	  <option>Second Floor</option>
+             	  </select>                  
+             	  <label for='' id="text6">Floor No</label>
+                </div>
+                <div class='input-box'>
+                  <select id='Department1'>
+              		  <option>None</option>
+             		  <option>General Knowledge</option>
+                	  <option>Psychology</option>
+                	  <option>Philosophy</option>
+                	  <option>Religion</option>
+              		  <option>Mythology</option>
+              		  <option>Story</option>
+              		  <option>Biography</option>
+              		  <option>Social Sciences</option>
+              		  <option>Folklore</option>
+             		  <option>Languages</option>
+             		  <option>History</option>
+              		  <option>Grammar</option>
+             	      <option>Maths</option>
+             		  <option>Science</option>
+             		  <option>Medicine</option>
+             		  <option>Technology</option>
+             		  <option>Arts</option>
+             		  <option>Entertainment</option>
+             		  <option>Literature</option>
+             		  <option>Geography</option>
+                  </select>
+                  <label for="" id="text6">Department</label>
+                </div>
+                <div class='input-box'>
+                  <input type='number' required id='Shelve_Number1'>
+                  <label for=''>Shelve Number</label>
+                </div>
+                <button type='submit' onclick='forUpdatedSubmitButton()'>Submit</button>
+              </div>
+            </div>
+          </div>
+          <div id="forBookDetailsUpdated">
+            <span id ="heading13">Book Details</span>
+              <div id="UpdatedBookDetails1"></div>
+              <span id="Success1">Successfully Updated</span>
+          </div>
+        </div>
+        <div id ="issueBookswholeDiv" class="summa">
+           <span id="heading4">Issued Book Details</span>
+           <div id="BorrowBookSearch">
+              <input type='text' placeholder='Enter the Book Name' id='borrowBookName' autocomplete="off" required/>
+              <i class='fa-solid fa-magnifying-glass' id='searchbuttonforborrowBooks'></i>
+           </div>
+           <div id="headingsOfBorrowBooks">
+               <span id="design1">Book Name</span>
+               <span id="design2">ISBN No</span>
+               <span id="design3">Person Name</span>
+               <span id="design4">Phone Number</span>
+               <span id="design5">From Date</span>
+               <span id="design6">Return Date</span>
+               <span id="design7">Book Fine</span>
+           </div>
+           <div id="borrowPersonDetails"></div>
+        </div>
+        <div id="memberswholeDiv" class="summa">
+          <span id="heading6">Library User Details</span>
+               <div id="UserDetailsSearch">
+              <input type='text' placeholder="Enter the User's Name" id='UserName' autocomplete="off" required/>
+              <i class='fa-solid fa-magnifying-glass' id='searchbuttonforUserPhoneNo'></i>
+           </div>
+           <div id="headingsOfUserDetails">
+               <span id="design8">Gender</span>
+               <span id="design9">User Name</span>
+               <span id="design10">Date of Birth</span>
+               <span id="design11">Phone Number</span>
+               <span id="design12">Total Number of Book Issued</span>
+               <span id="design13">Total Fine of the User</span>
+           </div>
+            <div id= "PersonDetailsWholeDiv">
+                <div id="PersonDetails"></div>
+            </div>
+        </div>
+        <div id="HistorywholeDiv" class="summa">
+          <span id='heading20'>History</span>
+          
+             <div id="headingsOfUserHistory">
+               <span id="design31">Book Name</span>
+               <span id="design32">ISBN No</span>
+               <span id="design33">From Date</span>
+               <span id="design34">Return Date</span>
+               <span id="design35">Book Fine</span>
+               <span id="design36">Fined Date</span>
+               <span id="design37">Status</span>
+           </div>
+           <div id="UserHistory">
+              <div id="UserHistoryDetails"></div>
+           </div>
+        </div>
+        <div id="termsAndConditions" class="summa">
+          <span id='heading2'>Terms and Conditions</span>
+          <div id="termsandConditionsDetails">
+              <p><span style="color:#0ef; font-size:18px;">Zoho Library Software</span> and the mobile application are
+                    owned by Zoho Library. We are providing you with access to this software and our mobile application
+                    (together, our “Services”) subject to the following terms and conditions.
+                </p><br>
+                <p>By browsing, accessing, using, registering for or purchasing merchandise on this software or
+                    otherwise using
+                    our Services, you agree to all of the following terms and conditions, including any policies
+                    referred to
+                    herein (collectively, these “Terms”). So, please read these Terms carefully. We reserve the right to
+                    change
+                    this software and these Terms at any time. If you are unwilling to be bound by these Terms‚ you
+                    should not
+                    browse, access‚ use‚ register for or purchase merchandise from the Software.</p><br>
+
+                <h5>Privacy Policy</h5><br>
+                <p>Our Privacy Policy, which also governs your visit to Our Software, can be found at [PRIVACY POLICY].
+                    Please
+                    review our Privacy Policy for information on how We collect, use and share information about our
+                    users.
+                </p><br>
+                <h5>Use of this software</h5><br>
+                <p>Subject to your compliance with these Terms‚ We grant you a limited‚ non-exclusive‚ non-transferable‚
+                    non-sublicensable license to access and make personal‚ non-commercial use of this software. This
+                    license
+                    grant does not include:</p>
+                <p>1. Any resale or commercial use of this software or content therein.</p>
+                <p>2. The collection and use of any product listings or descriptions.</p>
+                <p>3. Making derivative uses of this software and its contents.</p>
+                <p>4. Use of any data mining‚ robots‚ or similar data gathering and extraction methods on this software.
+                </p><br>
+                <p>You may not use‚ frame or utilize framing techniques to enclose any of Our trademark‚ logo‚ content
+                    or other
+                    proprietary information (including the images found at this software‚ the content of any text or the
+                    layout/design of any page or form contained on a page) without Our express written consent. Further‚
+                    you may
+                    not use any meta tags or any other “hidden text” utilizing Our name‚ trademark‚ or product name
+                    without Our
+                    express written consent. Any breach of these Terms shall result in the immediate revocation of the
+                    license
+                    granted in this paragraph without notice to you. You are granted a limited, revocable, and
+                    nonexclusive
+                    right to create a hyperlink to the homepage of this software so long as the link does not portray us
+                    or our
+                    products or services in a false, misleading, derogatory, or otherwise offensive matter. This limited
+                    right
+                    may be revoked at any time. You may not use any of our logos or other proprietary graphics or
+                    trademarks as
+                    part of the link without express written permission.</p><br>
+                <h5>Account</h5><br>
+                <p>In order to access some features of this Software, you may be required to have a subscription, and we
+                    may
+                    assign it to you, or you may be required to select a password and username or account
+                    identification. If you
+                    subscribe, you agree to provide us with accurate and complete registration information‚ and inform
+                    us
+                    immediately of any updates or other changes to such information.</p><br>
+                <p>You are solely responsible for protecting the security and confidentiality of the password and
+                    identification
+                    assigned to you. You shall immediately notify us of any unauthorized use of your password or
+                    identification
+                    or any other breach or threatened breach of this Software's security. Each time you use a password
+                    or
+                    identification, you will be deemed authorized to access and use the Software in a manner consistent
+                    with
+                    these Terms. We have no obligation to investigate the authorization or source of any such access or
+                    use of
+                    this Software. You will be solely responsible for all access to and use of this Software by anyone
+                    using the
+                    password and identification originally selected by, or assigned to, you whether or not such access
+                    to and
+                    use of this Software is authorized by you, including without limitation, all communications and
+                    transmissions and all obligations (including without limitation financial obligations) incurred
+                    through such
+                    access or use.</p><br>
+                <h5>Electronic Communication
+                </h5><br>
+                <p>When you use this software or send e-mails to us, you are communicating with us electronically. You
+                    consent
+                    to receive communications from us electronically. We will communicate with you by e-mail or posting
+                    notices
+                    on this software or through our other services. You agree that all agreements, notices, disclosures
+                    and
+                    other communication that we provide to you electronically satisfy any legal requirements that such
+                    communications be in writing.</p><br>
+                <h5>User Content
+                </h5><br>
+                <p>This software may include features and functionality ("Interactive Features"") that allows users to
+                    create
+                    post, transmit or store any content, such as text, music, sound, photos, video, graphics or code on
+                    the
+                    software ("User Content"). User Content is publicly-viewable and may include your profile
+                    information and
+                    any content you post pursuant to your profile. Still, it does not include your account information
+                    or
+                    information you submit to make a purchase. You agree that you are solely responsible for your user
+                    Content
+                    and your use of Interactive Features, and that you use any Interactive Features at your own risk. By
+                    using
+                    any Interactive Areas, you agree not to post, upload to, transmit, distribute, store, create or
+                    otherwise
+                    publish or send through the software’s any of the following:</p><br>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li> User Content that is unlawful, libelous, defamatory, obscene, pornographic, indecent, lewd,
+                        suggestive,
+                        harassing, threatening, abusive, inflammatory, fraudulent or otherwise objectionable;</li>
+                    <li> user Content that would constitute, encourage or provide instructions for a criminal offence,
+                        violate
+                        the rights of any party or that would otherwise create liability or violate any local, state,
+                        national
+                        or international law;</li>
+                    <li> User Content that displays describes or encourages usage of any product We sell in a manner
+                        that could
+                        be offensive, inappropriate or harmful to Us or any user or consumer;</li>
+                    <li>user Content that may impinge upon or violate the publicity, privacy or data protection rights
+                        of
+                        others, including pictures, videos, images or information about another individual where you
+                        have not
+                        obtained such individual's consent;</li>
+                    <li> User Content that makes false or misleading statements, claims or depictions about a person,
+                        company,
+                        product or service;</li>
+                    <li>user Content that may infringe any patent, trademark, trade secret, copyright or other
+                        intellectual or
+                        proprietary rights of any party;</li>
+                    <li> User Content that impersonates any person or entity or otherwise misrepresents your affiliation
+                        with a
+                        person or entity; and</li>
+                    <li> Viruses, malware of any kind, corrupted data or other harmful, disruptive or destructive files
+                        or code.
+                    </li>
+                </ul><br>
+                <h5>Rights in user Content</h5><br>
+                <p>Except as otherwise provided in these terms, we claim no ownership or control over any user content
+                    on this
+                    software or in a separate agreement with us. However, by submitting or posting user content on this
+                    software, you grant to us a nonexclusive, royalty-free, worldwide, perpetual, irrevocable,
+                    transferable, and
+                    fully sublicensable right to use, reproduce, modify, adapt, publish, translate, create derivative
+                    works
+                    from, distribute, perform and display such user content on this software and third-party software’s
+                    and
+                    mobile applications and in all other media or formats, whether currently known or hereafter
+                    developed, for
+                    any purpose and without any compensation to you. You also grant users of this software the right to
+                    access
+                    your user content in connection with their use of this software.</p><br>
+                <p>By posting user content to this software, you represent and warrant that:</p><br>
+                <p>1. Such user content is non-confidential.</p>
+                <p>2. You own and control all of the rights, title, and interest in and to the user content, or you
+                    otherwise
+                    have all the necessary rights to post and use such user content to this software and grant to us the
+                    rights
+                    you grant in these Terms.</p>
+                <p>3. The user content is accurate and not misleading or harmful in any manner.</p>
+                <p>4. The user content, and your use and posting thereof in connection with this software, do not and
+                    will not
+                    violate these Terms or any other of our applicable terms, guidelines or policies or any applicable
+                    law, rule
+                    or regulation.</p><br>
+                <h5>Feedback</h5><br>
+                <p>Separate and apart from user content, you may have the ability to submit questions, comments,
+                    suggestions,
+                    reviews, ideas, plans, designs, notes, proposals, drawings, original or creative materials and other
+                    information regarding this software, us and our products or services (collectively "Feedback"). You
+                    agree
+                    that Feedback is non-confidential and shall become Our sole property. We shall own exclusive rights,
+                    including all intellectual property rights, in and to such Feedback. We shall be entitled to the
+                    unrestricted use and dissemination of the feedback for any purpose, commercial or otherwise, without
+                    acknowledgement or compensation to you.</p><br>
+                <h5>Restrictions on Rights to use
+                </h5><br>
+                <p>You agree that you shall not (and you agree not to allow any other individual or entity using your
+                    password
+                    and identification to):</p><br>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li>Download‚ modify‚ reproduce‚ adapt‚ translate‚ reverse engineer‚ create derivative works based
+                        upon‚
+                        publicly display‚ sell‚ rent‚ license‚ or in any way commercially exploit any portion of this
+                        software‚
+                        except and to the extent expressly permitted under these Terms;</li>
+                    <li> Remove any copyright‚ trademark or other proprietary rights notice contained in or on the
+                        Software;
+                    </li>
+                    <li> Use any robot‚ spider‚ Software search/retrieval application‚ or other devices to retrieve or
+                        index any
+                        portion of this Software;</li>
+                    <li> Collect any information about other users (including usernames and email addresses) for any
+                        purpose
+                        other than to solicit and share reviews with other users;</li>
+                    <li> Reformat or frame any portion of any Web pages that are part of this Software;</li>
+                    <li> Create user accounts by automated means or under false or fraudulent pretense;</li>
+                    <li> Create or transmit to other users unsolicited electronic communications‚ such as “spam‚” or
+                        otherwise
+                        interfere with other user's enjoyment of the Software;</li>
+                    <li> Submit to this software any content that falsely states or implies that such content is
+                        sponsored or
+                        endorsed by us;</li>
+                    <li> Transmit or upload to this software any item containing or embodying any virus‚ worm‚ defect‚
+                        malware‚
+                        Trojan horse‚ software bomb or other feature designed to damage or degrade in any manner the
+                        performance
+                        of this Software ‚ any other Web Software‚ or any computer or other device or system‚ or the
+                        enjoyment
+                        of this Software by any user;</li>
+                    <li> Use this Software to violate the security of or gain unauthorized access to any computer or
+                        computer
+                        network or other device or system (including unauthorized attempts to discover passwords or
+                        security
+                        encryption codes);</li>
+                    <li>Submit to this Software any content that is unlawful or facilitates‚ constitutes‚ promotes or
+                        encourages
+                        illegal activity, or otherwise use the Software to transfer or store illegal material‚ including
+                        any
+                        material deemed threatening or obscene;</li>
+                    <li> Copy or store any user Content offered on this Software other than for your personal‚
+                        non-commercial
+                        use;</li>
+                    <li> Take any action that imposes‚ or may impose‚ in our sole discretion‚ an unreasonable or
+                        disproportionately large data or traffic load on this Software or the IT infrastructure used to
+                        operate
+                        and make this Software available; or</li>
+                    <li> Use this Software and any user Content‚ intentionally or unintentionally‚ to violate any
+                        applicable
+                        local‚ state‚ federal or international law.</li>
+                </ul><br>
+                <p>We have no obligation to monitor any user conduct on this software, and We reserve the right and have
+                    absolute discretion to monitor any user conduct on this software at any time and for any reason
+                    without
+                    notice.
+                </p><br>
+                <h5>Ownership
+                </h5><br>
+                <p>As between you and us‚ this software‚ including all photographs‚ images‚ text‚ graphics‚ icons‚ audio
+                    clips‚
+                    software‚ source code and other aspects thereof (excluding user Content)‚ all improvements or
+                    modifications
+                    thereof‚ all derivative works based thereon‚ and the collection‚ arrangement‚ and assembly of this
+                    software
+                    (collectively, the “Software Content”)‚ including all copyrights‚ trademarks‚ and other intellectual
+                    property or proprietary rights in the foregoing‚ are owned by us or our licensors and protected by
+                    applicable copyright laws. The use of any of Our trademarks or service marks without our express
+                    written
+                    consent is strictly prohibited. You may not use our trademarks or service marks in connection with
+                    any
+                    product or service in any way that is likely to cause confusion. You may not use our trademarks or
+                    service
+                    marks in any manner that disparages or discredits us. You may not use any of our trademarks or
+                    service marks
+                    in meta tags without prior explicit consent. Nothing in these Terms shall be deemed to grant to you
+                    or any
+                    other user any license or right in or to any of Our patents‚ copyrights‚ trademarks‚ trade secrets
+                    or other
+                    proprietary rights.
+                </p><br>
+                <h5>Links</h5><br>
+                <p>this software may contain links to other Softwares on the Internet that are owned and operated by
+                    third
+                    parties. You acknowledge that We are not responsible for the operation of or content located on or
+                    through
+                    any such Software.
+                </p><br>
+                <h5>Termination</h5><br>
+                <p>You may terminate the Terms at any time by closing your account, discontinuing your use of this
+                    software and
+                    providing us with a notice of termination. We reserve the right, without notice and in our sole
+                    discretion,
+                    to terminate your right to use this software, or any portion of this software, and to block or
+                    prevent your
+                    future access to and use of this software or any portion of this software.
+                </p><br>
+                <h5>Indemnification</h5><br>
+                <p>To the fullest extent permitted by applicable law, you agree to defend, indemnify and hold harmless
+                    us and
+                    our subsidiaries and affiliates, and our respective officers, directors, agents, partners, members,
+                    employees, independent contractors, service providers and consultants ("Our Related Parties"), from
+                    and
+                    against any claims, damages, costs, liabilities and expenses (collectively, "Claims") arising out of
+                    or
+                    related to (a) your access to and use or misuse of this software; (b) any user Content you post,
+                    upload,
+                    use, distribute, store or otherwise transmit on or through this software; (c) any Feedback that you
+                    provide;
+                    (d) your violation of these Terms; and (e) your violation of any rights of another. You agree to
+                    promptly
+                    notify us of any third party Claims, cooperate with us in defending such Claims and pay all fees,
+                    costs, and
+                    expenses associated with defending such Claims (including but not limited to attorneys' fees). You
+                    further
+                    agree that the We shall have the right to control the defense or settlement of any third party
+                    Claims.
+                </p><br>
+                <h5>Disclaimers</h5><br>
+                <p>Except as expressly provided, this software, including all Software Content, and services provided on
+                    or in
+                    connection with this software are provided on an "AS IS" and "WITH ALL FAULTS" basis without
+                    representations, warranties or conditions of any kind, either express or implied. WE DISCLAIM ALL
+                    OTHER
+                    REPRESENTATIONS, WARRANTIES, CONDITIONS AND DUTIES, EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+                    LIMITED
+                    TO IMPLIED WARRANTIES, DUTIES OR CONDITIONS: (A) OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+                    PURPOSE OR
+                    usE, RESULTS, TITLE, AND NON-INFRINGEMENT; AND (B) CREATED BY TRADE usAGE, COURSE OF DEALING OR
+                    COURSE OF
+                    PERFORMANCE. We do not represent or warrant that this software is accurate, complete, reliable,
+                    current or
+                    error-free. We do not represent or warrant that this software or our servers are free of viruses or
+                    other
+                    harmful components.
+                </p><br>
+                <h5>Exclusivity of Remedy; Limitation of Liability
+                </h5><br>
+                <p>Your sole and exclusive remedy, and our sole and exclusive liability, for any breach of warranty,
+                    shall be
+                    your right to return the product or receive a refund for the service under our applicable returns
+                    and
+                    exchanges policies. in no event shall we or our related parties be liable for special, indirect,
+                    incidental,
+                    or consequential damages, including lost profits or loss of business, even if they have been advised
+                    of the
+                    possibility of such damages, nor shall our and our related parties’ aggregate liability, whether in
+                    contract, warranty, tort (including negligence, whether active, passive or imputed), or other
+                    theory,
+                    arising out of or relating to these terms or the purchase or use of any products or services
+                    purchased
+                    through this software exceed the purchase price of the product or service. the limitations set forth
+                    in this
+                    paragraph will not limit or exclude our or our related parties’ gross negligence, fraud,
+                    intentional,
+                    willful, malicious or reckless misconduct.</p><br>
+                <h5>Remedies</h5><br>
+                <p>You agree that our remedy at law for any actual or threatened breach of these terms would be
+                    inadequate and
+                    that we shall be entitled to specific performance or injunctive relief, or both, in addition to any
+                    damages
+                    that we may be legally entitled to recover, together with reasonable expenses of any form of dispute
+                    resolution, including, without limitation, attorneys' fees. No right or remedy of ours shall be
+                    exclusive of
+                    any other, whether at law or in equity, including damages injunctive relief, attorneys' fees, and
+                    expenses
+                    without limitation.</p><br>
+                <p><span style="font-weight: bold;">Modifications to Software</span> We reserve the right to modify or
+                    discontinue, temporarily or permanently, this software or any features or portions thereof without
+                    prior
+                    notice.
+                </p><br>
+                <h5>Severability</h5><br>
+                <p>If any these provisions shall be deemed invalid, void, or for any reason unenforceable, that
+                    condition shall
+                    be deemed several and shall not affect the validity and enforceability of any remaining provision.
+                </p><br>
+                <h5>No Third-Party Beneficiaries
+                </h5><br>
+                <p>These Terms are for the benefit of and will be enforceable by the parties only. These Terms are not
+                    intended
+                    to confer any right or benefit on any third party or to create any obligations or liability of a
+                    party to
+                    any such third party.
+                </p><br>
+                <h5>Miscellaneous
+                </h5><br>
+                <p>No agency‚ partnership‚ joint venture‚ or employment relationship is created as a result of these
+                    Terms, and
+                    you do not have any authority of any kind to bind us in any respect whatsoever. We may provide you
+                    with
+                    notices‚ including those regarding changes to these Terms‚ by email‚ regular mail‚ or postings on
+                    this
+                    software. These Terms, which shall be deemed accepted by you upon your use of the Software‚
+                    constitute the
+                    entire agreement between you and us regarding the use of this software. Our failure to exercise or
+                    enforce
+                    any right or provision of these Terms shall not constitute a waiver of the enforcement of such right
+                    or
+                    provision. If any provision of these Terms is found to be unenforceable or invalid‚ that provision
+                    shall be
+                    limited or eliminated to the minimum extent necessary so that these Terms shall otherwise remain in
+                    full
+                    force and effect and enforceable. These Terms are not assignable‚ transferable or sublicensable by
+                    you‚
+                    except with our prior written consent. These Terms include and incorporate by reference Our Privacy
+                    Policy,
+                    which can be found at [PRIVACY POLICY], and any notices regarding the Software.
+                </p><br>
+          </div>
+        </div>
+        <div id="settings1" class="summa">
+        <div id="SettingFirstPage">
+          <span id='heading3'>Settings</span>
+          <div id='forImage'>
+            <img src='v.png' class='size7' onclick='viewsettings()' />
+            <img src='u.png' class='size7' onclick='updatesettings()' />
+            <span id='text4'>View Profile</span>
+            <span id='text5'>Update Profile</span>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+       <div id='UserContainer' class="summa2">
+      <div id='contents'>
+        <div id='LogoImage'>
+          <img src='logo.png' id='size5' />
+        </div>
+        <div id='contentsBox'>
+          <div class='categories' id='allBook'>
+            <i class='fa-solid fa-book-open alignment'></i>
+            <span class='textOne'>ALL BOOKS</span>
+          </div>
+          <div class='categories' id="ReturnBooks">
+            <i class="fa-solid fa-book alignment"></i>
+            <span class='textOne'>RETURN BOOKS</span>
+          </div>
+          <div class='categories' id='History'>
+            <i class="fa-solid fa-clock-rotate-left alignment"></i>
+            <span class='textOne'>HISTORY</span>
+          </div>
+          <div class='categories' id='terms'>
+            <iconify-icon icon='bxs:lock-open' class='alignment'></iconify-icon>
+            <span class='textOne'>TERMS & CONDITIONS</span>
+          </div>
+          <div class='categories' id='settings'>
+            <iconify-icon icon='material-symbols:settings-rounded' class='alignment'></iconify-icon>
+            <span class='textOne'>SETTINGS</span>
+          </div>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='navigationBar'>
+          <div id='profileDiv'>
+            <i class='fa-solid fa-envelope' id='size1' class="hiding"></i>
+            <i class='fa-regular fa-bell' id='size2'></i>
+            <div id='profileImage'></div>
+            <iconify-icon icon='material-symbols:arrow-drop-down' class='align1' onclick="logOut()"></iconify-icon>
+          </div>
+        </div>
+        <div id="allBookswholeDiv" class="summa">
+          <div id='imageDiv'>
+             <img src='libr.jpg' width='100%' id="iyyanar" />
+          </div>
+          <span id='heading1'>Library Management System</span>
+          <span id='subHeading'>1,00,000+ Books from thousands of inspirational authors</span>
+          <div id='seacrhBox'>
+            <div id='inputSearchDiv'>
+              <input type='text' placeholder='Find a Book ....' id='search' autocomplete="off" required>
+              <i class='fa-solid fa-magnifying-glass' id='searchbutton'></i>
+            </div>
+            <div id='Categories'>
+              <select id='types'>
+                <option>None</option>
+                <option>General Knowledge</option>
+                <option>Psychology</option>
+                <option>Philosophy</option>
+                <option>Religion</option>
+                <option>Mythology</option>
+                <option>Story</option>
+                <option>Biography</option>
+                <option>Social Sciences</option>
+                <option>Folklore</option>
+                <option>Languages</option>
+                <option>History</option>
+                <option>Grammar</option>
+                <option>Maths</option>
+                <option>Science</option>
+                <option>Medicine</option>
+                <option>Technology</option>
+                <option>Arts</option>
+                <option>Entertainment</option>
+                <option>Literature</option>
+                <option>Geography</option>
+              </select>
+            </div>
+          </div>
+		   <div id='booksContainer1'>
+          	<div id='booksContainerInner'>
+          	</div>
+          </div>         
+        </div>
+        <div id="ReturnBookDetail" class="summa">
+         <span id ="heading22">Return Books</span>
+         
+           <div id="Returnbooksdetails">
+              <div id="returnBooksDetails"></div>
+           </div>
+        </div>
+        <div id="HistorywholeDiv" class="summa">
+          <span id='heading20'>History</span>
+          
+             <div id="headingsOfUserHistory">
+               <span id="design31">Book Name</span>
+               <span id="design32">ISBN No</span>
+               <span id="design33">From Date</span>
+               <span id="design34">Return Date</span>
+               <span id="design35">Book Fine</span>
+               <span id="design36">Fined Date</span>
+               <span id="design37">Status</span>
+           </div>
+           <div id="UserHistory">
+              <div id="UserHistoryDetails"></div>
+           </div>
+        </div>
+        <div id="termsAndConditions" class="summa">
+          <span id='heading2'>Terms and Conditions</span>
+          <div id="termsandConditionsDetails">
+              <p><span style="color:#0ef; font-size:18px;">Zoho Library Software</span> and the mobile application are
+                    owned by Zoho Library. We are providing you with access to this software and our mobile application
+                    (together, our “Services”) subject to the following terms and conditions.
+                </p><br>
+                <p>By browsing, accessing, using, registering for or purchasing merchandise on this software or
+                    otherwise using
+                    our Services, you agree to all of the following terms and conditions, including any policies
+                    referred to
+                    herein (collectively, these “Terms”). So, please read these Terms carefully. We reserve the right to
+                    change
+                    this software and these Terms at any time. If you are unwilling to be bound by these Terms‚ you
+                    should not
+                    browse, access‚ use‚ register for or purchase merchandise from the Software.</p><br>
+
+                <h5>Privacy Policy</h5><br>
+                <p>Our Privacy Policy, which also governs your visit to Our Software, can be found at [PRIVACY POLICY].
+                    Please
+                    review our Privacy Policy for information on how We collect, use and share information about our
+                    users.
+                </p><br>
+                <h5>Use of this software</h5><br>
+                <p>Subject to your compliance with these Terms‚ We grant you a limited‚ non-exclusive‚ non-transferable‚
+                    non-sublicensable license to access and make personal‚ non-commercial use of this software. This
+                    license
+                    grant does not include:</p>
+                <p>1. Any resale or commercial use of this software or content therein.</p>
+                <p>2. The collection and use of any product listings or descriptions.</p>
+                <p>3. Making derivative uses of this software and its contents.</p>
+                <p>4. Use of any data mining‚ robots‚ or similar data gathering and extraction methods on this software.
+                </p><br>
+                <p>You may not use‚ frame or utilize framing techniques to enclose any of Our trademark‚ logo‚ content
+                    or other
+                    proprietary information (including the images found at this software‚ the content of any text or the
+                    layout/design of any page or form contained on a page) without Our express written consent. Further‚
+                    you may
+                    not use any meta tags or any other “hidden text” utilizing Our name‚ trademark‚ or product name
+                    without Our
+                    express written consent. Any breach of these Terms shall result in the immediate revocation of the
+                    license
+                    granted in this paragraph without notice to you. You are granted a limited, revocable, and
+                    nonexclusive
+                    right to create a hyperlink to the homepage of this software so long as the link does not portray us
+                    or our
+                    products or services in a false, misleading, derogatory, or otherwise offensive matter. This limited
+                    right
+                    may be revoked at any time. You may not use any of our logos or other proprietary graphics or
+                    trademarks as
+                    part of the link without express written permission.</p><br>
+                <h5>Account</h5><br>
+                <p>In order to access some features of this Software, you may be required to have a subscription, and we
+                    may
+                    assign it to you, or you may be required to select a password and username or account
+                    identification. If you
+                    subscribe, you agree to provide us with accurate and complete registration information‚ and inform
+                    us
+                    immediately of any updates or other changes to such information.</p><br>
+                <p>You are solely responsible for protecting the security and confidentiality of the password and
+                    identification
+                    assigned to you. You shall immediately notify us of any unauthorized use of your password or
+                    identification
+                    or any other breach or threatened breach of this Software's security. Each time you use a password
+                    or
+                    identification, you will be deemed authorized to access and use the Software in a manner consistent
+                    with
+                    these Terms. We have no obligation to investigate the authorization or source of any such access or
+                    use of
+                    this Software. You will be solely responsible for all access to and use of this Software by anyone
+                    using the
+                    password and identification originally selected by, or assigned to, you whether or not such access
+                    to and
+                    use of this Software is authorized by you, including without limitation, all communications and
+                    transmissions and all obligations (including without limitation financial obligations) incurred
+                    through such
+                    access or use.</p><br>
+                <h5>Electronic Communication
+                </h5><br>
+                <p>When you use this software or send e-mails to us, you are communicating with us electronically. You
+                    consent
+                    to receive communications from us electronically. We will communicate with you by e-mail or posting
+                    notices
+                    on this software or through our other services. You agree that all agreements, notices, disclosures
+                    and
+                    other communication that we provide to you electronically satisfy any legal requirements that such
+                    communications be in writing.</p><br>
+                <h5>User Content
+                </h5><br>
+                <p>This software may include features and functionality ("Interactive Features"") that allows users to
+                    create
+                    post, transmit or store any content, such as text, music, sound, photos, video, graphics or code on
+                    the
+                    software ("User Content"). User Content is publicly-viewable and may include your profile
+                    information and
+                    any content you post pursuant to your profile. Still, it does not include your account information
+                    or
+                    information you submit to make a purchase. You agree that you are solely responsible for your user
+                    Content
+                    and your use of Interactive Features, and that you use any Interactive Features at your own risk. By
+                    using
+                    any Interactive Areas, you agree not to post, upload to, transmit, distribute, store, create or
+                    otherwise
+                    publish or send through the software’s any of the following:</p><br>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li> User Content that is unlawful, libelous, defamatory, obscene, pornographic, indecent, lewd,
+                        suggestive,
+                        harassing, threatening, abusive, inflammatory, fraudulent or otherwise objectionable;</li>
+                    <li> user Content that would constitute, encourage or provide instructions for a criminal offence,
+                        violate
+                        the rights of any party or that would otherwise create liability or violate any local, state,
+                        national
+                        or international law;</li>
+                    <li> User Content that displays describes or encourages usage of any product We sell in a manner
+                        that could
+                        be offensive, inappropriate or harmful to Us or any user or consumer;</li>
+                    <li>user Content that may impinge upon or violate the publicity, privacy or data protection rights
+                        of
+                        others, including pictures, videos, images or information about another individual where you
+                        have not
+                        obtained such individual's consent;</li>
+                    <li> User Content that makes false or misleading statements, claims or depictions about a person,
+                        company,
+                        product or service;</li>
+                    <li>user Content that may infringe any patent, trademark, trade secret, copyright or other
+                        intellectual or
+                        proprietary rights of any party;</li>
+                    <li> User Content that impersonates any person or entity or otherwise misrepresents your affiliation
+                        with a
+                        person or entity; and</li>
+                    <li> Viruses, malware of any kind, corrupted data or other harmful, disruptive or destructive files
+                        or code.
+                    </li>
+                </ul><br>
+                <h5>Rights in user Content</h5><br>
+                <p>Except as otherwise provided in these terms, we claim no ownership or control over any user content
+                    on this
+                    software or in a separate agreement with us. However, by submitting or posting user content on this
+                    software, you grant to us a nonexclusive, royalty-free, worldwide, perpetual, irrevocable,
+                    transferable, and
+                    fully sublicensable right to use, reproduce, modify, adapt, publish, translate, create derivative
+                    works
+                    from, distribute, perform and display such user content on this software and third-party software’s
+                    and
+                    mobile applications and in all other media or formats, whether currently known or hereafter
+                    developed, for
+                    any purpose and without any compensation to you. You also grant users of this software the right to
+                    access
+                    your user content in connection with their use of this software.</p><br>
+                <p>By posting user content to this software, you represent and warrant that:</p><br>
+                <p>1. Such user content is non-confidential.</p>
+                <p>2. You own and control all of the rights, title, and interest in and to the user content, or you
+                    otherwise
+                    have all the necessary rights to post and use such user content to this software and grant to us the
+                    rights
+                    you grant in these Terms.</p>
+                <p>3. The user content is accurate and not misleading or harmful in any manner.</p>
+                <p>4. The user content, and your use and posting thereof in connection with this software, do not and
+                    will not
+                    violate these Terms or any other of our applicable terms, guidelines or policies or any applicable
+                    law, rule
+                    or regulation.</p><br>
+                <h5>Feedback</h5><br>
+                <p>Separate and apart from user content, you may have the ability to submit questions, comments,
+                    suggestions,
+                    reviews, ideas, plans, designs, notes, proposals, drawings, original or creative materials and other
+                    information regarding this software, us and our products or services (collectively "Feedback"). You
+                    agree
+                    that Feedback is non-confidential and shall become Our sole property. We shall own exclusive rights,
+                    including all intellectual property rights, in and to such Feedback. We shall be entitled to the
+                    unrestricted use and dissemination of the feedback for any purpose, commercial or otherwise, without
+                    acknowledgement or compensation to you.</p><br>
+                <h5>Restrictions on Rights to use
+                </h5><br>
+                <p>You agree that you shall not (and you agree not to allow any other individual or entity using your
+                    password
+                    and identification to):</p><br>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li>Download‚ modify‚ reproduce‚ adapt‚ translate‚ reverse engineer‚ create derivative works based
+                        upon‚
+                        publicly display‚ sell‚ rent‚ license‚ or in any way commercially exploit any portion of this
+                        software‚
+                        except and to the extent expressly permitted under these Terms;</li>
+                    <li> Remove any copyright‚ trademark or other proprietary rights notice contained in or on the
+                        Software;
+                    </li>
+                    <li> Use any robot‚ spider‚ Software search/retrieval application‚ or other devices to retrieve or
+                        index any
+                        portion of this Software;</li>
+                    <li> Collect any information about other users (including usernames and email addresses) for any
+                        purpose
+                        other than to solicit and share reviews with other users;</li>
+                    <li> Reformat or frame any portion of any Web pages that are part of this Software;</li>
+                    <li> Create user accounts by automated means or under false or fraudulent pretense;</li>
+                    <li> Create or transmit to other users unsolicited electronic communications‚ such as “spam‚” or
+                        otherwise
+                        interfere with other user's enjoyment of the Software;</li>
+                    <li> Submit to this software any content that falsely states or implies that such content is
+                        sponsored or
+                        endorsed by us;</li>
+                    <li> Transmit or upload to this software any item containing or embodying any virus‚ worm‚ defect‚
+                        malware‚
+                        Trojan horse‚ software bomb or other feature designed to damage or degrade in any manner the
+                        performance
+                        of this Software ‚ any other Web Software‚ or any computer or other device or system‚ or the
+                        enjoyment
+                        of this Software by any user;</li>
+                    <li> Use this Software to violate the security of or gain unauthorized access to any computer or
+                        computer
+                        network or other device or system (including unauthorized attempts to discover passwords or
+                        security
+                        encryption codes);</li>
+                    <li>Submit to this Software any content that is unlawful or facilitates‚ constitutes‚ promotes or
+                        encourages
+                        illegal activity, or otherwise use the Software to transfer or store illegal material‚ including
+                        any
+                        material deemed threatening or obscene;</li>
+                    <li> Copy or store any user Content offered on this Software other than for your personal‚
+                        non-commercial
+                        use;</li>
+                    <li> Take any action that imposes‚ or may impose‚ in our sole discretion‚ an unreasonable or
+                        disproportionately large data or traffic load on this Software or the IT infrastructure used to
+                        operate
+                        and make this Software available; or</li>
+                    <li> Use this Software and any user Content‚ intentionally or unintentionally‚ to violate any
+                        applicable
+                        local‚ state‚ federal or international law.</li>
+                </ul><br>
+                <p>We have no obligation to monitor any user conduct on this software, and We reserve the right and have
+                    absolute discretion to monitor any user conduct on this software at any time and for any reason
+                    without
+                    notice.
+                </p><br>
+                <h5>Ownership
+                </h5><br>
+                <p>As between you and us‚ this software‚ including all photographs‚ images‚ text‚ graphics‚ icons‚ audio
+                    clips‚
+                    software‚ source code and other aspects thereof (excluding user Content)‚ all improvements or
+                    modifications
+                    thereof‚ all derivative works based thereon‚ and the collection‚ arrangement‚ and assembly of this
+                    software
+                    (collectively, the “Software Content”)‚ including all copyrights‚ trademarks‚ and other intellectual
+                    property or proprietary rights in the foregoing‚ are owned by us or our licensors and protected by
+                    applicable copyright laws. The use of any of Our trademarks or service marks without our express
+                    written
+                    consent is strictly prohibited. You may not use our trademarks or service marks in connection with
+                    any
+                    product or service in any way that is likely to cause confusion. You may not use our trademarks or
+                    service
+                    marks in any manner that disparages or discredits us. You may not use any of our trademarks or
+                    service marks
+                    in meta tags without prior explicit consent. Nothing in these Terms shall be deemed to grant to you
+                    or any
+                    other user any license or right in or to any of Our patents‚ copyrights‚ trademarks‚ trade secrets
+                    or other
+                    proprietary rights.
+                </p><br>
+                <h5>Links</h5><br>
+                <p>this software may contain links to other Softwares on the Internet that are owned and operated by
+                    third
+                    parties. You acknowledge that We are not responsible for the operation of or content located on or
+                    through
+                    any such Software.
+                </p><br>
+                <h5>Termination</h5><br>
+                <p>You may terminate the Terms at any time by closing your account, discontinuing your use of this
+                    software and
+                    providing us with a notice of termination. We reserve the right, without notice and in our sole
+                    discretion,
+                    to terminate your right to use this software, or any portion of this software, and to block or
+                    prevent your
+                    future access to and use of this software or any portion of this software.
+                </p><br>
+                <h5>Indemnification</h5><br>
+                <p>To the fullest extent permitted by applicable law, you agree to defend, indemnify and hold harmless
+                    us and
+                    our subsidiaries and affiliates, and our respective officers, directors, agents, partners, members,
+                    employees, independent contractors, service providers and consultants ("Our Related Parties"), from
+                    and
+                    against any claims, damages, costs, liabilities and expenses (collectively, "Claims") arising out of
+                    or
+                    related to (a) your access to and use or misuse of this software; (b) any user Content you post,
+                    upload,
+                    use, distribute, store or otherwise transmit on or through this software; (c) any Feedback that you
+                    provide;
+                    (d) your violation of these Terms; and (e) your violation of any rights of another. You agree to
+                    promptly
+                    notify us of any third party Claims, cooperate with us in defending such Claims and pay all fees,
+                    costs, and
+                    expenses associated with defending such Claims (including but not limited to attorneys' fees). You
+                    further
+                    agree that the We shall have the right to control the defense or settlement of any third party
+                    Claims.
+                </p><br>
+                <h5>Disclaimers</h5><br>
+                <p>Except as expressly provided, this software, including all Software Content, and services provided on
+                    or in
+                    connection with this software are provided on an "AS IS" and "WITH ALL FAULTS" basis without
+                    representations, warranties or conditions of any kind, either express or implied. WE DISCLAIM ALL
+                    OTHER
+                    REPRESENTATIONS, WARRANTIES, CONDITIONS AND DUTIES, EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+                    LIMITED
+                    TO IMPLIED WARRANTIES, DUTIES OR CONDITIONS: (A) OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+                    PURPOSE OR
+                    usE, RESULTS, TITLE, AND NON-INFRINGEMENT; AND (B) CREATED BY TRADE usAGE, COURSE OF DEALING OR
+                    COURSE OF
+                    PERFORMANCE. We do not represent or warrant that this software is accurate, complete, reliable,
+                    current or
+                    error-free. We do not represent or warrant that this software or our servers are free of viruses or
+                    other
+                    harmful components.
+                </p><br>
+                <h5>Exclusivity of Remedy; Limitation of Liability
+                </h5><br>
+                <p>Your sole and exclusive remedy, and our sole and exclusive liability, for any breach of warranty,
+                    shall be
+                    your right to return the product or receive a refund for the service under our applicable returns
+                    and
+                    exchanges policies. in no event shall we or our related parties be liable for special, indirect,
+                    incidental,
+                    or consequential damages, including lost profits or loss of business, even if they have been advised
+                    of the
+                    possibility of such damages, nor shall our and our related parties’ aggregate liability, whether in
+                    contract, warranty, tort (including negligence, whether active, passive or imputed), or other
+                    theory,
+                    arising out of or relating to these terms or the purchase or use of any products or services
+                    purchased
+                    through this software exceed the purchase price of the product or service. the limitations set forth
+                    in this
+                    paragraph will not limit or exclude our or our related parties’ gross negligence, fraud,
+                    intentional,
+                    willful, malicious or reckless misconduct.</p><br>
+                <h5>Remedies</h5><br>
+                <p>You agree that our remedy at law for any actual or threatened breach of these terms would be
+                    inadequate and
+                    that we shall be entitled to specific performance or injunctive relief, or both, in addition to any
+                    damages
+                    that we may be legally entitled to recover, together with reasonable expenses of any form of dispute
+                    resolution, including, without limitation, attorneys' fees. No right or remedy of ours shall be
+                    exclusive of
+                    any other, whether at law or in equity, including damages injunctive relief, attorneys' fees, and
+                    expenses
+                    without limitation.</p><br>
+                <p><span style="font-weight: bold;">Modifications to Software</span> We reserve the right to modify or
+                    discontinue, temporarily or permanently, this software or any features or portions thereof without
+                    prior
+                    notice.
+                </p><br>
+                <h5>Severability</h5><br>
+                <p>If any these provisions shall be deemed invalid, void, or for any reason unenforceable, that
+                    condition shall
+                    be deemed several and shall not affect the validity and enforceability of any remaining provision.
+                </p><br>
+                <h5>No Third-Party Beneficiaries
+                </h5><br>
+                <p>These Terms are for the benefit of and will be enforceable by the parties only. These Terms are not
+                    intended
+                    to confer any right or benefit on any third party or to create any obligations or liability of a
+                    party to
+                    any such third party.
+                </p><br>
+                <h5>Miscellaneous
+                </h5><br>
+                <p>No agency‚ partnership‚ joint venture‚ or employment relationship is created as a result of these
+                    Terms, and
+                    you do not have any authority of any kind to bind us in any respect whatsoever. We may provide you
+                    with
+                    notices‚ including those regarding changes to these Terms‚ by email‚ regular mail‚ or postings on
+                    this
+                    software. These Terms, which shall be deemed accepted by you upon your use of the Software‚
+                    constitute the
+                    entire agreement between you and us regarding the use of this software. Our failure to exercise or
+                    enforce
+                    any right or provision of these Terms shall not constitute a waiver of the enforcement of such right
+                    or
+                    provision. If any provision of these Terms is found to be unenforceable or invalid‚ that provision
+                    shall be
+                    limited or eliminated to the minimum extent necessary so that these Terms shall otherwise remain in
+                    full
+                    force and effect and enforceable. These Terms are not assignable‚ transferable or sublicensable by
+                    you‚
+                    except with our prior written consent. These Terms include and incorporate by reference Our Privacy
+                    Policy,
+                    which can be found at [PRIVACY POLICY], and any notices regarding the Software.
+                </p><br>
+          </div>
+        </div>
+        <div id="settings1" class="summa">
+        <div id="SettingFirstPage">
+          <span id='heading3'>Settings</span>
+          <div id='forImage'>
+            <img src='v.png' class='size7' onclick='viewsettings()' />
+            <img src='u.png' class='size7' onclick='updatesettings()' />
+            <span id='text4'>View Profile</span>
+            <span id='text5'>Update Profile</span>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src='script.js'></script>
+    <script src='https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js'></script>
+    <script src='https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js'></script>
+  </body>
+</html>

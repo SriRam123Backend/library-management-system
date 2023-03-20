@@ -1,0 +1,2132 @@
+@charset "UTF-8";
+*
+{
+  margin:0px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+ font-family: "Gentium Book Plus", serif;
+  background:#23242a;
+}
+#Container1
+{
+  position:relative;
+  width: 374px;
+  height: 467px;
+  border-radius:10px;
+  overflow: hidden;
+  padding: 40px;
+}
+#SignUpContainer
+{
+  position:relative;
+  height: 704px;
+  width: 423px;
+  border-radius:10px;
+  overflow: hidden;
+  padding: 40px;
+}
+
+#UpdateDetailsContainer{
+    position: relative;
+    height: 473px;
+    width: 368px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 40px;
+    margin-top: 215px;
+}
+#Container1::before{
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:100%;
+  height:100%;
+  background: linear-gradient(0deg,transparent,#0ef,#0ef);
+  transform-origin: bottom right;
+  animation: animate 24s linear infinite;
+}
+#Container1::after{
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:100%;
+  height:100%;
+  background: linear-gradient(0deg,transparent,#0ef,#0ef);
+  transform-origin: bottom right;
+  animation: animate 24s linear infinite;
+  animation-delay: -12s;
+}
+#SignUpContainer::before{
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:100%;
+  height:100%;
+  background: linear-gradient(0deg,transparent,#0ef,#0ef);
+  transform-origin: bottom right;
+  animation: animate 24s linear infinite;
+}
+#SignUpContainer::after{
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:100%;
+  height:100%;
+  background: linear-gradient(0deg,transparent,#0ef,#0ef);
+  transform-origin: bottom right;
+  animation: animate 24s linear infinite;
+  animation-delay: -12s;
+}
+@keyframes animate
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+#inputsDiv1
+{
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  align-items:center;
+  position:absolute;
+  inset: 2px;
+  border-radius:10px;
+  z-index:10;
+  background:#1c1c1c;
+}
+h2 {
+    font-size: 42px;
+    color:#0ef;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Gentium Book Plus", serif;
+}
+.input-box1
+{
+  position:relative;
+  margin-top:36px;
+  border-bottom: 2px solid #0ef;
+}
+ .label1
+{
+  position:absolute;
+  top:50%;
+  left:5px;
+  transform: translateY(-50%);
+  font-size:20px;
+  font-family: "Gentium Book Plus", serif;
+  color:#0ef;
+  pointer-events:none;
+  transition: .5s;
+}
+.input1
+{
+  width:320px;
+  height:40px;
+  font-size:19px;
+  font-family: "Gentium Book Plus", serif;
+  color:white;
+  padding:0 5px;
+  background:transparent;
+  outline:none;
+  border:none;
+}
+.input-box1 input:focus ~ label,
+.input-box1 input:valid ~ label {
+  top: -8px;
+}
+
+.input-box1 select:focus ~ label,
+.input-box1 select:valid ~ label {
+  top: -8px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+#showPassword
+{
+    position: absolute;
+    top: 32%;
+    left: 91%;
+    color: #0ef;
+}
+
+#showingPassword
+{
+	position: absolute;
+    top: 32%;
+    left: 91%;
+    color: #0ef;
+}
+
+#showingPassword3
+{
+	position: absolute;
+    top: 32%;
+    left: 91%;
+    color: #0ef;
+}
+
+#showingPassword1
+{
+	position: absolute;
+    top: 32%;
+    left: 91%;
+    color: #0ef;
+}
+#button1{
+  position:relative;
+  width:46%;
+  height:40px;
+  background:#0ef;
+  font-size:19px;
+  font-family: "Gentium Book Plus", serif;
+  color: #000;
+  font-weight:800;
+  cursor:pointer;
+  border-radius:30px;
+  margin-top: 50px;
+  border:none;
+  outline:none;
+}
+
+.SignUp-link{
+  color: #fff;
+  font-family: "Gentium Book Plus", serif;
+  font-size:17px;
+  margin-top:40px;
+}
+.SignUp-link a
+{
+  color: #0ef;
+  text-decoration: none;
+  font-weight: 500;
+}
+.SignUp-link a:hover{
+  text-decoration:underline; 
+}
+#container {
+  position: absolute;
+  top: 140px;
+  left: 572px;
+}
+#Container {
+  position: relative;
+  width: 500px;
+  height: 690px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 40px;
+}
+#Container::before {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, #ff6c4c, #ff6c4c);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+#Container::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, #f12aa5, #f12aa5);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#inputsDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  inset: 2px;
+  border-radius: 10px;
+  z-index: 10;
+}
+.input-box {
+  position: relative;
+  margin-top: 36px;
+  border-bottom: 2px solid black;
+}
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: black;
+  pointer-events: none;
+  transition: 0.5s;
+  font-weight: bold;
+  font-family: "Gentium Book Plus", serif;
+}
+#container5 {
+  position: absolute;
+  top: 140px;
+  left: 572px;
+}
+#Container5 {
+  position: relative;
+  width: 500px;
+  height: 690px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 40px;
+}
+#Container5::before {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, #ff6c4c, #ff6c4c);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+#Department
+{
+	border: none;
+    outline: none;
+    width: 320px;
+    height: 40px;
+    background: transparent;
+    font-size: 20px;
+    color: lightgrey;
+    font-family: "Gentium Book Plus", serif;
+}
+#Floor_No
+{
+	border: none;
+    outline: none;
+    width: 320px;
+    height: 40px;
+    background: transparent;
+    font-size: 20px;
+    color: lightgrey;
+    font-family: "Gentium Book Plus", serif;
+}
+#backButtonSize1{
+    font-size: 28px;
+    position: absolute;
+    top: 119px;
+    left: 109px;
+}
+#backButtonSize1:hover
+{
+	cursor:pointer;
+}
+#Container5::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, #f12aa5, #f12aa5);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+.input-box input {
+  width: 320px;
+  height: 40px;
+  font-size: 20px;
+  font-family: "Gentium Book Plus", serif;
+  font-weight: 500;
+  color: lightgrey;
+  padding: 0 5px;
+  background: transparent;
+  outline: none;
+  border: none;
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -8px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input1::-webkit-calendar-picker-indicator {
+    color: aliceblue;
+    opacity: 1;
+    display: block;
+    filter:invert(1);
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
+input[type="date"]:focus::-webkit-datetime-edit {
+  color: aliceblue !important;
+}
+
+input[type=date]:required:invalid::-webkit-datetime-edit-text {
+	color: aliceblue;
+    -webkit-appearance: none;
+    display: none;
+}
+input[type=date]:required:invalid::-webkit-datetime-edit-month-field{
+	color: aliceblue;
+    -webkit-appearance: none;
+    display: none;
+}
+input[type=date]:required:invalid::-webkit-datetime-edit-day-field {
+	color: aliceblue;
+    -webkit-appearance: none;
+    display: none;
+}
+input[type=date]:required:invalid::-webkit-datetime-edit-year-field {
+    -webkit-appearance: none;
+    display: none;
+    color: aliceblue;
+}
+
+button {
+  position: relative;
+  width: 27%;
+  height: 40px;
+  background: black;
+  font-size: 16px;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-top: 35px;
+  border: none;
+  outline: none;
+} 
+
+#fullContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0A070E;
+  overflow:hidden;
+}
+#contents {
+  display: flex;
+  flex-direction: column;
+  width: 329px;
+  height: 1068px;
+}
+#content {
+  display: flex;
+  flex-direction: column;
+  width: 1590px;
+  height: 1068px;
+  background-color: #232228;
+}
+#LogoImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 329px;
+  height: 99px;
+  background-color: #0A070E;
+}
+#navigationBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1590px;
+  height: 103px;
+  background-color: #232228;
+  box-shadow: 0 0px 21px rgba(0,238,255,0.17);
+}
+#contentsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 329px;
+  height: 272px;
+}
+.categories {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.7px;
+  color: grey;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  width: 329px;
+  height: 42px;
+  cursor:pointer;
+}
+.textOne {
+  margin-left: 20px;
+}
+.alignment {
+  margin-left: 28px;
+}
+#statusofdashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1540px;
+  height: 130px;
+  margin: 0px auto;
+  margin-top: 25px;
+}
+#greet {
+   font-family: "Gentium Book Plus", serif;
+  font-size: 25px;
+  color: lightgrey;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+.innerDivforBooks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 360px;
+  height: 130px;
+  font-family: "Gentium Book Plus", serif;
+  border-radius: 10px;
+}
+#yellowShadow
+{
+  background: rgb(0,0,0);
+background: linear-gradient(33deg, rgba(0,0,0,1) 62%, rgba(194,139,56,1) 100%);
+}
+#redShadow
+{
+  background: rgb(0,0,0);
+  background: linear-gradient(33deg, rgba(0,0,0,1) 62%, rgba(166,61,40,1) 100%);
+}
+#greenShadow
+{
+  background: rgb(0,0,0);
+  background: linear-gradient(33deg, rgba(0,0,0,1) 62%, rgba(5,162,141,1) 100%);
+}
+#blueShadow
+{
+  background: rgb(0,0,0);
+  background: linear-gradient(33deg, rgba(0,0,0,1) 62%, rgba(8,116,237,1) 100%);	
+}
+.size {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  margin-left: 15px;
+}
+.text1 {
+  font-size: 22px;
+  margin-right: 32px;
+  margin-bottom: 39px;
+  color: lightgrey;
+}
+#q {
+  position: absolute;
+  left: 653px;
+  top: 243px;
+  font-size: 25px;
+  color:white;
+}
+#r {
+  position: absolute;
+  left: 1046px;
+  top: 243px;
+  font-size: 25px;
+  color:white;
+}
+#s {
+  position: absolute;
+  left: 1439px;
+  top: 243px;
+  font-size: 25px;
+  color:white;
+}
+#t {
+  position: absolute;
+  left: 1832px;
+  top: 243px;
+  font-size: 25px;
+  color:white;
+}
+#profileDiv {
+  display: flex;
+  align-items: center;
+  height: 61px;
+  width: 250px;
+  margin-left: 1477px;
+}
+#size1 {
+  font-size: 22px;
+  color: #0ef;
+  margin-left: 10px;
+  display:none;
+}
+#size2 {
+  font-size: 22px;
+  color: #0ef;
+  margin-left: 21px;
+  display:none;
+}
+#profileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  margin-left: 19px;
+}
+#textalign2 {
+  margin-left: 10px;
+}
+.align1 {
+  color: #0ef;
+  font-size: 28px;
+}
+.categories:hover {
+  color: #0ef;
+}
+#resource {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1540px;
+  height: 713px;
+  margin: 0px auto;
+  margin-top: 25px;
+}
+
+#NewUser {
+  flex-direction: column;
+  width: 752px;
+  height: 713px;
+  background-color: #0A070E;
+  border-radius: 12px;
+}
+#NewBooks {
+  flex-direction: column;
+  width: 752px;
+  height: 713px;
+  background-color: #0A070E;
+  border-radius: 12px;
+}
+.headingDiv {
+  position: sticky;
+  width: 752px;
+  height: 65px;
+  align-self: flex-start;
+  color:white;
+  font-size: 24px;
+}
+.text3 {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.Userdetails {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 65px;
+	box-shadow: 0 0 12px rgba(0,238,255,0.5);
+    border-radius: 8px;
+    margin: 16px auto;
+    grid-template-columns: 13% 45% 25% 5%;
+    font-size:22px;
+    color:#868686;
+}
+.Bookdetails {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 65px;
+    box-shadow: 0 0 12px rgba(0,238,255,0.5);
+    border-radius: 8px;
+    margin: 16px auto;
+    grid-template-columns: 13% 32% 25% 12% 10%;
+    font-size:19px;
+    color:#868686;
+}
+#phno {
+  font-size: 14px;
+  color: lightgrey;
+  position: absolute;
+  top: 68px;
+  left: 511px;
+}
+#tbi {
+  font-size: 14px;
+  color: lightgrey;
+  position: absolute;
+  top: 68px;
+  left: 604px;
+}
+.listall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 604px;
+  width: 119px;
+  height: 33px;
+  background-color: #0ef;
+  border-radius: 6px;
+  color: black;
+  font-size: 17px;
+}
+.listall:hover {
+  cursor: pointer;
+}
+#isbn {
+  font-size: 14px;
+  color: lightgrey;
+  position: absolute;
+  top: 68px;
+  left: 540px;
+}
+#isd {
+  font-size: 14px;
+  color: lightgrey;
+  position: absolute;
+  top: 68px;
+  left: 640px;
+}
+#exp {
+  font-size: 14px;
+  color: lightgrey;
+  position: absolute;
+  top: 68px;
+  left: 393px;
+}
+.snoDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.NameDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.phnoDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.totalBookissuedDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#termsAndConditions {
+  width: 100%;
+  height: 1004px;
+}
+#addBookswholeDiv {
+  margin-top: -9px;
+  width: 100%;
+  height: 980px;
+}
+#updateBookDetail {
+  margin-top: -9px;
+  width: 100%;
+  height: 980px;
+}
+#allBookswholeDiv {
+  margin-top: -4px;
+  width: 100%;
+  height: 980px;
+}
+#main {
+  margin-top: 26px;
+  width: 100%;
+  height: 980px;
+}
+#dashBoard {
+  width: 100%;
+  height: 980px;
+}
+#issueBookswholeDiv
+{
+  width: 100%;
+  height: 1004px;
+}
+#memberswholeDiv
+{
+  width: 100%;
+  height: 1004px;
+}
+#settings1
+{
+  width: 100%;
+  height: 1004px;
+}
+#imageDiv {
+  display: flex;
+  width: 100%;
+  height: 373px;
+}
+#seacrhBox {
+  display: flex;
+  width: 588px;
+  height: 61px;
+  background-color: white;
+  flex-direction: row;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 443px;
+  left: 797px;
+  border-radius: 10px;
+  box-shadow: 0px 2px lightgrey;
+}
+#inputSearchDiv {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 400px;
+  height: 50px;
+}
+#Categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 188px;
+  height: 30px;
+  border-left: 2px solid lightgrey;
+}
+#types {
+    border: none;
+    outline: none;
+    background-color: white;
+    font-weight: bold;
+    width: 170px;
+    font-size: 17px;
+    font-family: "Gentium Book Plus", serif;
+    letter-spacing: 0.5px;
+}
+#search {
+  border: none;
+  outline: none;
+  background-color: white;
+  font-weight: bold;
+  width: 350px;
+  font-size: 18px;
+  font-family: "Gentium Book Plus", serif;
+  margin-left: 10px;
+}
+#searchbutton {
+  margin-right: 7px;
+}
+#searchbutton:hover {
+  cursor:pointer;
+}
+#heading1 {
+  font-size: 53px;
+  font-family: "Gentium Book Plus", serif;
+  position: absolute;
+  top: 182px;
+  left: 777px;
+  color: white;
+}
+#heading2 {
+  font-size: 53px;
+  font-family: "Gentium Book Plus", serif;
+  position: absolute;
+  top: 125px;
+  left: 900px;
+  color: lightgrey;
+}
+#heading3 {
+  font-size: 53px;
+  font-family: "Gentium Book Plus", serif;
+  position: absolute;
+  top: 122px;
+  left: 1018px;
+  color: lightgrey;
+}
+#subHeading {
+  font-size: 24px;
+  font-family: "Gentium Book Plus", serif;
+  position: absolute;
+  top: 260px;
+  left: 800px;
+  color: white;
+}
+#size5 {
+    left: -8px;
+    top: 16px;
+    position: absolute;
+    width: 312px;
+    height: 83px;
+}
+.size6 {
+  margin-top: 8px;
+  width: 1590px;
+  height: 965.3px;
+  opacity: 0.4;
+}
+.imageSize {
+  width: 50px;
+  height: 50px;
+}
+
+#showPassword2 {
+    position: absolute;
+    top: 32%;
+    left: 91%;
+    color: #0ef;
+}
+
+#forImage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1061px;
+  height: 350px;
+  margin: 186px auto;
+}
+.size7 {
+  width: 350px;
+  height: 350px;
+  border-radius: 12px;
+}
+.size7:hover {
+  cursor: pointer;
+}
+#text4 {
+  position: absolute;
+  font-family: "Gentium Book Plus", serif;
+  top: 659px;
+  left: 714px;
+  font-size: 22px;
+  color:#0ef;
+}
+#text5 {
+  position: absolute;
+  font-family: "Gentium Book Plus", serif;
+  top: 659px;
+  left: 1424px;
+  font-size: 22px;
+  color:#0ef;
+}
+
+#category {
+  border: none;
+  outline: none;
+  width: 320px;
+  height: 40px;
+  background: transparent;
+  font-size: 20px;
+  color: lightgrey;
+  font-family: "Gentium Book Plus", serif;
+}
+#text6 {
+  top: -8px;
+  left: -1px;
+  font-weight: bold;
+  font-family: "Gentium Book Plus", serif;
+  font-size: 22px;
+}
+#size8 {
+  font-size: 53px;
+  font-family: "Gentium Book Plus", serif;
+  position: absolute;
+  top: 132px;
+  left: 981px;
+  color: white;
+}
+#size9 {
+  position: absolute;
+  top: 343px;
+  left: 1101px;
+}
+#size10 {
+  width: 48px;
+}
+#text7 {
+  margin-top: -10px;
+  margin-left: -14px;
+}
+#size11 {
+  font-size: 53px;
+  font-family: "Gentium Book Plus", serif;
+  position: absolute;
+  top: 132px;
+  left: 913px;
+  color: white;
+}
+.summa {
+  display: none;
+}
+.summa1
+{
+  display:none;
+}
+.summa2
+{
+  display:none;
+}
+#logOut
+{
+    position: absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    background:#1c1c1c;
+    top: 81px;
+    right: 13px;
+    width: 119px;
+    font-family: "Gentium Book Plus", serif;
+    height: 28px;
+    font-size: 18px;
+    z-index: 1;
+}
+#logOut:hover
+{
+   cursor:pointer;
+}
+#imgSize
+{
+	width:50px;
+}
+.text11
+{
+	margin-left:12px;
+}
+
+
+
+#booksContainer1::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+#booksContainer1{
+	height:50vh;
+	width:80vw;
+	margin-top:5vh;
+	overflow-y:scroll;
+	overflow-x:hidden;
+} 
+
+
+.bookDet{
+	height:25vh;
+	width:80vw;
+	display:flex;
+	align-items:center;
+	justify-content:space-evenly;
+}
+
+.bookDesign{
+	height:90%;
+	width:15%;
+	background-color: #0A070E;
+	display:flex;
+	justify-content:space-evenly;
+	align-items:center;
+	flex-direction:column;
+	font-family: "Gentium Book Plus", serif;
+	font-size:18px;
+	font-weight:500;
+	border-radius:8px;
+	border:1px solid #0A070E;
+	cursor:pointer;
+	color:lightgrey;
+}
+
+.imageSize1
+{
+    height: 169px;
+    width: 120px;
+}
+
+.bookDesign:hover
+{
+	border:1px solid lightgrey;
+}
+#bigSizeBookImage
+{
+	width: 370px;
+    height: 370px;
+    float: left;
+    margin:72px;
+    display: flex;
+	justify-content:space-evenly;
+	align-items:center;
+	flex-direction:column;
+	font-family: "Gentium Book Plus", serif;
+	font-size:18px;
+	font-weight:500;
+	border-radius:8px;
+}
+#fullDetailsOfBook
+{
+	width: 670px;
+    height: 370px;
+    float: left;
+    display:flex;
+	justify-content:space-around;
+	align-items:center;
+	flex-direction:column;
+	margin:72px 0px 0px -38px;
+}
+#status
+{
+    width: 241px;
+    height: 127px;
+    float: left;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Gentium Book Plus", serif;
+    font-size: 23px;
+    font-weight: 500;
+    border-radius: 8px;
+    margin: 186px 0px 0px 72px;
+}
+.eachInformationOfBook
+{
+	width: 100%;
+    height: 40px;
+    display: grid;
+    justify-content:center;
+	align-items:center;
+	color: grey;
+	font-family: "Gentium Book Plus", serif;
+	font-size:23px;
+	font-weight:500;
+	grid-template-columns: 40% 10% 45%;
+}
+
+.statusOfBook
+{
+	width: 100%;
+    height: 40px;
+    display:flex;
+	justify-content:center;
+	align-items:center;
+	cursor:pointer;
+	border-radius:5px;
+}
+.BigImageSize
+{
+	height:100%;
+	width: 270px;
+}
+.text16
+{
+	color:lightgrey;
+}
+#heading4
+{
+	font-size: 53px;
+    font-family: "Gentium Book Plus", serif;
+    position: absolute;
+    top: 122px;
+    left: 917px;
+    color: lightgrey;
+}
+#heading6
+{
+	font-size: 53px;
+    font-family: "Gentium Book Plus", serif;
+    position: absolute;
+    top: 128px;
+    left: 917px;
+    color: lightgrey;
+}
+#BorrowBookSearch
+{
+	border-bottom:2px solid #0ef;
+	margin: 114px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+}
+#borrowPersonDetails
+{
+	width: 100%;
+    height: 72%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#borrowPersonDetails::-webkit-scrollbar {
+  display: none;
+}
+
+#PersonDetailsWholeDiv::-webkit-scrollbar {
+  display: none;
+}
+#headingsOfBorrowBooks
+{
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    font-family: "Gentium Book Plus", serif;
+    height: 70px;
+    width: 97%;
+    margin-top: -75px;
+    box-shadow: 0 0px 21px rgb(192 192 192 / 17%);
+    color: lightgrey;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    
+}
+.elementsOfBorrowBooks
+{
+	position: relative;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 21px;
+    font-family: "Gentium Book Plus", serif;
+    height: 68px;
+    width: 97%;
+    grid-template-columns: 14% 5% 13% 7% 6% 6% 4%;
+    color: #868686;
+    box-shadow: 0 0px 8px rgb(0 238 255 / 50%);
+    margin-top: 28px;
+    background-color: black;
+    border-radius: 11px;
+}
+#searchbuttonforborrowBooks
+{
+  color:#0ef;
+}
+#design1
+{
+	margin-left:47px;
+}
+#design2
+{
+	margin-left:214px;
+}
+
+#design3
+{
+	margin-left:124px;
+}
+
+#design4
+{
+	margin-left:170px;
+}
+
+#design5
+{
+	margin-left:98px;
+}
+
+#design6
+{
+	margin-left:90px;
+}
+#design7
+{
+	margin-left:62px;
+}
+#design8
+{
+	margin-left:57px;
+}
+#design9
+{
+	margin-left:47px;
+}
+#design10
+{
+	margin-left:346px;
+}
+#design11
+{
+	margin-left:162px;
+}
+#design12
+{
+	margin-left:48px;
+}
+#design13
+{
+	margin-left:43px;
+}
+#borrowBookName
+{
+	border: none;
+    outline: none;
+    background-color:transparent;
+    font-weight: bold;
+    width: 360px;
+    height: 40px;
+    font-size: 22px;
+    font-family: "Gentium Book Plus", serif;
+    color:grey;
+}
+#borrowBookName::placeholder
+{
+	color:#0ef;
+}
+#UserDetailsSearch
+{
+    border-bottom: 2px solid #0ef;
+    margin: 114px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+}
+#UserName
+{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-weight: bold;
+    width: 360px;
+    height: 40px;
+    font-size: 22px;
+    font-family: "Gentium Book Plus", serif;
+    color:grey;
+}
+
+#UserName::placeholder
+{
+	color:#0ef;
+}
+
+#searchbuttonforUserPhoneNo
+{
+	color:#0ef;
+}
+#headingsOfUserDetails
+{
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    font-family: "Gentium Book Plus", serif;
+    height: 70px;
+    width: 97%;
+    margin-top: -75px;
+    box-shadow: 0 0px 21px rgb(192 192 192 / 17%);
+    color: lightgrey;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+#PersonDetailsWholeDiv
+{
+    display: flex;
+    width: 100%;
+    height: 692px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.elementsOfUserDetails {    
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 21px;
+    font-family: "Gentium Book Plus", serif;
+    height: 68px;
+    width: 1533px;
+    grid-template-columns: 0% 22% 11% 11% 8% 6%;
+    color: #868686;
+    box-shadow: 0 0px 8px rgb(0 238 255 / 50%);
+    margin-top: 28px;
+    margin-left: 28px;
+    background-color: black;
+    border-radius: 11px;
+}
+#container2{
+    position: absolute;
+    top: 140px;
+    left: 1015px;
+}
+#Container2{
+    position: relative;
+    width: 500px;
+    height: 690px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 40px;
+}
+#category1
+{
+	border: none;
+    outline: none;
+    width: 320px;
+    height: 40px;
+    background: transparent;
+    font-size: 20px;
+    color: lightgrey;
+    font-family: "Gentium Book Plus", serif;
+}
+#text61
+{
+	
+    top: -8px;
+    left: -1px;
+    font-weight: bold;
+    font-family: "Gentium Book Plus", serif;
+    font-size: 22px;
+	
+}
+#UpdateBookByIsbnNo
+{
+    border-bottom: 2px solid black;
+    position:absolute;
+    top: 332px;
+    left: 705px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 320px;
+    height: 40px;
+}
+#inputIsbnNo
+{   
+    width: 320px;
+    height: 40px;
+    font-size: 20px;
+    font-family: "Gentium Book Plus", serif;
+    font-weight: 500;
+    color: lightgrey;
+    padding: 0 5px;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+#heading11
+{
+    position: absolute;
+    top: 255px;
+    left: 768px;
+    font-size: 40px;
+    color: white;
+}
+#UpdatedBookDetail
+{
+    width: 350px;
+    height: 393px;
+    position: absolute;
+    top: 394px;
+    left:701px;
+}
+#searchbuttonforUserPhoneNo:hover
+{
+	cursor:pointer;
+}
+.eachInformationOfBook1
+ {
+    width: 100%;
+    height: 40px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: "Gentium Book Plus", serif;
+    font-size: 17px;
+    font-weight: 500;
+    grid-template-columns: 38% 10% 52%;
+}
+
+#showPassword1 {
+    position: absolute;
+    top: 32%;
+    left: 91%;
+    color: #0ef;
+}
+
+#forBookDetailsAdded
+{
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 383px;
+    height: 503px;
+    position: absolute;
+    top: 278px;
+    left: 1120px;
+}
+
+#heading12
+{
+    font-size: 40px;
+    color: black;
+}
+#UpdatedBookDetails
+ {
+    width: 350px;
+    height: 425px;
+}
+#Success
+{
+    font-size: 35px;
+    color: black;
+}
+
+#forBookDetailsUpdated
+{
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 383px;
+    height: 537px;
+    position: absolute;
+    top: 262px;
+    left: 1118px;
+}
+
+#heading13
+{
+    font-size: 40px;
+    color: black;
+}
+#UpdatedBookDetails1
+ {
+    width: 350px;
+    height: 403px;
+}
+#Success1
+{
+    font-size: 35px;
+    color: black;
+}
+
+#termsandConditionsDetails
+{
+    height: 75.6vh;
+    max-width: 1301px;
+    margin-top: 12vh;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#termsandConditionsDetails::-webkit-scrollbar {
+  display: none;
+}
+
+p
+{
+	font-size:18px;
+	color:#828282;
+	letter-spacing: 0.4px;
+}
+h5, .h5 {
+    line-height: 1.11111;
+    font-size: 22px;
+    color: #0ef;
+    font-weight: 700;
+}
+li{
+	font-size: 18px;
+    color: #828282;
+}
+#viewProfileWholeDIv
+{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	width:440px;
+	height:500px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:254px;
+	border-radius:15px;
+	box-shadow: 0px 6px 29px 2px grey
+}
+#heading16 {
+    font-size: 53px;
+    font-family: "Gentium Book Plus", serif;
+    position: absolute;
+    top: 249px;
+    left: 978px;
+    color: lightgrey; 
+}
+
+#heading17 {
+    font-size: 35px;
+    font-family: "Gentium Book Plus", serif;
+    margin-top:62px;
+    color: #c76e7a; 
+}
+
+#pbg
+{
+	width:440px;
+	height:168px;
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+}
+
+#profileImageSize
+{
+    position: absolute;
+    top: 436px;
+    left: 1054px;
+    width: 148px;
+}
+#HistorywholeDiv
+{
+    margin-top: -4px;
+    width: 100%;
+    height: 980px;
+}
+.profileiconSize
+{
+	margin-top:22px;
+	font-size:20px;
+	color:#895570;
+}
+.alignmentText
+{
+	margin-left:23px;
+	color: #c76e7a; 
+} 
+
+.backButtonSize
+{
+  position: absolute;
+  top: 143px;
+  left: 362px;
+  font-size:40px;
+  color:#0ef;	
+}
+.backButtonSize:hover
+{
+	cursor:pointer;
+}
+#wholeBookDiv
+{
+	margin-top:30px;
+	display:flex;
+	flex-direction:column;
+	justify-content: space-evenly;
+}
+#wholeUserDiv
+{
+	margin-top:30px;
+	display:flex;
+	flex-direction:column;
+	justify-content: space-evenly;
+}
+#UserContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0A070E;
+  overflow:hidden;
+}
+.summa5
+{
+	display:none;
+}
+#heading20
+{
+	font-size:40px;
+	color:lightgrey;
+    position: absolute;
+    top: 134px;
+    left: 1018px;
+}
+
+#headingsOfUserHistory
+{
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    font-family: "Gentium Book Plus", serif;
+    height: 70px;
+    width: 97%;
+    box-shadow: 0 0px 21px rgb(192 192 192 / 17%);
+    color: lightgrey;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    margin-top:131px;
+}
+
+#design31
+{
+	margin-left: 47px;
+}
+#design32
+{
+	margin-left: 295px;
+}
+#design33
+{
+	margin-left: 121px;
+}
+#design34
+{
+	margin-left: 109px;
+}
+#design35
+{
+	margin-left: 89px;
+}
+#design36
+{
+	margin-left: 83px;
+}
+#design37
+{
+	margin-left: 127px;
+}
+
+#UserDetails
+{
+	display: flex;
+    width: 100%;
+    height: 692px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.elementsOfUserHistory{    
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 21px;
+    font-family: "Gentium Book Plus", serif;
+    height: 68px;
+    width: 1533px;
+	grid-template-columns: 19% 5% 7% 7% 3% 7% 7%;
+    color: #868686;
+    box-shadow: 0 0px 8px rgb(0 238 255 / 50%);
+    margin-top: 28px;
+    margin-left: 28px;
+    background-color: black;
+    border-radius: 11px;
+}
+
+.alignment50
+{
+	text-align:center;
+}
+
+#ReturnBookDetail
+{
+    margin-top: -4px;
+    width: 100%;
+    height: 980px;
+}
+
+#RequestedBookswholeDiv
+{
+    margin-top: -4px;
+    width: 100%;
+    height: 980px;
+}
+
+#shadow {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height:100vh;
+    position:absolute;
+    top:0;
+    z-index:2;
+    overflow: hidden;
+    background-color: rgb(17, 14, 14,0.7);
+}
+
+.videoAlign{
+	width:120vw;
+	height:120vh;
+}
+
+
+#iyyanar
+{
+	opacity:.7;
+}
+
+#bookborrowContainer{
+	
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    width: 405px;
+    margin: 306px auto;
+    background-color: #0A070E;
+    position: relative;
+    border-radius: 10px;
+	
+}
+
+#CloseButton {
+	font-family:arial;
+    font-size: 35px;
+    color: #0ef;
+    position: absolute;
+	top: 8px;
+    left: 367px;
+    cursor: default;
+}
+
+#headingofBorrow
+{
+	position:absolute;
+	top:22px;
+	font-size:34px;
+	color:#0ef;
+}
+
+#bookborrowContainer p{
+	margin-top:350px;
+	position:absolute;
+}
+
+#Borrow
+{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 17px;
+    width: 149px;
+    height: 44px;
+    font-size: 21px;
+    background-color: #0ef;
+}
+#size64{
+	 margin-top: 0px;
+}
+
+#UserHistory
+{
+	display: flex;
+    width: 100%;
+    height: 692px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#UserHistory::-webkit-scrollbar {
+  display: none;
+}
+
+#Returnbooksdetails::-webkit-scrollbar {
+  display: none;
+}
+
+#heading21 {
+    font-size: 53px;
+    font-family: "Gentium Book Plus", serif;
+    position: absolute;
+	top: 207px;
+    left: 889px;
+    color: lightgrey;
+}
+#UpdateProfileWholeDIv{
+	display:flex;
+	justify-content: center;
+}
+
+#heading22
+{
+    font-size: 45px;
+    font-family: "Gentium Book Plus", serif;
+    position: absolute;
+    top: 131px;
+    left: 1016px;
+    color: lightgrey;
+}
+
+
+#Returnbooksdetails
+{
+	display: flex;
+	justify-content:space-around;
+	align-items:center;
+    width: 100%;
+    height: 883px;
+    margin-top: 86px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+	
+}
+#returnBooksDetails{
+	height:100%;
+	width:100%;
+}
+.twoBookDiv
+{
+	display:flex;
+	flex-direction: row;
+	margin-top:52px;
+	justify-content:space-evenly;
+	align-items:center;
+}
+.returnBookOfeachBookDiv{
+	
+    display: flex;
+    width: 524px;
+    height: 299px;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Gentium Book Plus", serif;
+    box-shadow: 0 0px 8px rgb(0 238 255 / 50%);
+    border-radius: 21px;
+}
+
+.ImgWholeDiv
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 213px;
+    height: 299px;
+}
+.returnDetailsWholeDiv
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 311px;
+    height: 299px;
+    flex-direction:column;
+}
+
+.returnDetailsDiv
+{
+	display: flex;
+	flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 311px;
+    height: 185px;
+    font-size:14px;
+}
+
+.returnBookButtonDiv
+{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 311px;
+    height: 70px;
+}
+
+.returnButton
+{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 162px;
+    height: 42px;
+    background-color: green;
+    font-size:18px;
+    border-radius: 63px;
+}
+
+.ImgDiv
+{
+	width: 178px;
+    height: 259px;
+}
+
+
+.wholeDetailsDiv {
+    width: 100%;
+    height: 10px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: "Gentium Book Plus", serif;
+    font-size: 14px;
+    font-weight: 500;
+    grid-template-columns: 38% 10% 52%;
+}
+
+.text87
+{
+	color:grey;
+}
+
+
+#bookborrowContainer1{
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    width: 405px;
+    margin: 306px auto;
+    background-color: #0A070E;
+    position: relative;
+    border-radius: 10px;
+}
+
+#return1
+{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 17px;
+    width: 149px;
+    height: 44px;
+    font-size: 21px;
+    background-color: #0ef;
+}
+
+#aligning
+{
+	margin-top:75px;
+}
+
+
+#conform{
+  margin-top:97px;
+}
+
+#alignment20
+{
+	margin-top:109px;
+}
+#Gender
+{
+	background-color:#1c1c1c;
+	color:aliceblue;
+}
+
+.hiding{
+	background: transparent;
+	display:none;
+}
+#container6{
+  position: absolute;
+  top: 140px;
+  left: 1015px;
+}
+#Container6 {
+  position: relative;
+  width: 500px;
+  height: 690px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 40px;
+}
+#Container6::before {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, #ff6c4c, #ff6c4c);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+#Department1
+{
+	border: none;
+    outline: none;
+    width: 320px;
+    height: 40px;
+    background: transparent;
+    font-size: 20px;
+    color: lightgrey;
+    font-family: "Gentium Book Plus", serif;
+}
+#Floor_No1
+{
+	border: none;
+    outline: none;
+    width: 320px;
+    height: 40px;
+    background: transparent;
+    font-size: 20px;
+    color: lightgrey;
+    font-family: "Gentium Book Plus", serif;
+}
+#backButtonSize2{
+    font-size: 28px;
+    position: absolute;
+    top: 130px;
+    left: 91px;
+}
+#backButtonSize2:hover
+{
+	cursor:pointer;
+}
+#Container6::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, #f12aa5, #f12aa5);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+#currentUserOfTheBook
+{
+    position: absolute;
+    left: 20px;
+    font-size: 17px;
+    width: 20px;
+    color: green;
+}

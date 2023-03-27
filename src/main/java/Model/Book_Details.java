@@ -14,7 +14,7 @@ public class Book_Details {
     public Date publishedDate;
 	public Categories category;
 	int availableCount;
-
+	Book_Floor_Details FloorDetails;
     
     public int getAvailableCount() {
 		return availableCount;
@@ -71,6 +71,16 @@ public class Book_Details {
 	public void setCategory(Categories category) {
 		this.category = category;
 	}
+
+	public Book_Floor_Details getFloorDetails() {
+		return FloorDetails;
+	}
+
+	public void setFloorDetails(Book_Floor_Details floorDetails) {
+		FloorDetails = floorDetails;
+	}
+	
+	
 	
 }
 

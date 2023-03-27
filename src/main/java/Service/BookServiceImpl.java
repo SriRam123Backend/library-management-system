@@ -125,7 +125,7 @@ public class BookServiceImpl implements BookService {
 		return AllBooks;
 	}
 	
-	public HashMap<String,Object> addBooks(JSONObject BookDetails)
+	public synchronized HashMap<String,Object> addBooks(JSONObject BookDetails)
 	{
 		HashMap<String,Object> Details = new HashMap<String,Object>();
 		String ISBN_No = (String) BookDetails.get("isbnNo");
@@ -148,16 +148,18 @@ public class BookServiceImpl implements BookService {
 		
 		try
 		{
+			
+		Floor_Details.setDepartment(Categories.valueOf(Department.replaceAll("\\s", "").toUpperCase()));
+		Floor_Details.setFloorNo(FloorNumber.valueOf(Floor_No.replaceAll("\\s", "").toUpperCase()));
+		Floor_Details.setShelveNo(Integer.parseInt(Shelve_Number));	
+			
 		NewBook.setISBN_No(Integer.parseInt(ISBN_No));
 		NewBook.setBookName(Book_Name);
 		NewBook.setAuthorName(Author_Name);
 		NewBook.setPages(Integer.parseInt(Page));
 		NewBook.setCategory(Categories.valueOf(Category.replaceAll("\\s", "").toUpperCase()));
 		NewBook.setAvailableCount(Integer.parseInt(AvailableCount));
-		
-		Floor_Details.setDepartment(Categories.valueOf(Department.replaceAll("\\s", "").toUpperCase()));
-		Floor_Details.setFloorNo(FloorNumber.valueOf(Floor_No.replaceAll("\\s", "").toUpperCase()));
-		Floor_Details.setShelveNo(Integer.parseInt(Shelve_Number));
+		NewBook.setFloorDetails(Floor_Details);
 		
 		NewBook.setPublishedDate(new SimpleDateFormat("yyyy-MM-dd").parse(Published_Date));
 		}
@@ -181,7 +183,7 @@ public class BookServiceImpl implements BookService {
 		return null;
 	}
 	
-	public HashMap<String,Object> updateBooks(JSONObject BookDetails)
+	public synchronized HashMap<String,Object> updateBooks(JSONObject BookDetails)
 	{
 		
 		HashMap<String,Object> Details = new HashMap<String,Object>();
@@ -234,7 +236,7 @@ public class BookServiceImpl implements BookService {
 		return null;
 	}
 	
-	public String deleteBooks(int ISBN_No)
+	public synchronized String deleteBooks(int ISBN_No)
 	{
 		BookDBCImpl.getInstance().deleteBooks(ISBN_No);
 		return "Successfully Removed";

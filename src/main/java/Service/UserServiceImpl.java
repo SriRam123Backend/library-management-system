@@ -261,7 +261,7 @@ public class UserServiceImpl implements UserService{
 	   return TotalFine;
 	}
 	
-	public BorrowBook_Details Borrow_Books(int ISBN_Number,String Return_Date,String Phone_Number)
+	public synchronized BorrowBook_Details Borrow_Books(int ISBN_Number,String Return_Date,String Phone_Number)
 	
 	{	
 		BorrowBook_Details books = null;

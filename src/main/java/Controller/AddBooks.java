@@ -64,7 +64,7 @@ public class AddBooks extends HttpServlet {
 	  
 	  HashMap<String,Object> map = BookServiceImpl.getInstance().addBooks(Book);
 	  Book_Details book = (Book_Details) map.get("NewBook");
-	  Book_Floor_Details Details = (Book_Floor_Details) map.get("FloorDetails");
+	  
 	  JSONObject addedBook = new JSONObject();
 	  SimpleDateFormat sdfrmt = new SimpleDateFormat("dd/MM/yyyy");
 	  
@@ -82,9 +82,12 @@ public class AddBooks extends HttpServlet {
     		addedBook.put("Published_Date",sdfrmt.format(book.getPublishedDate()));
   			addedBook.put("Category",book.getCategory().toString());
   			addedBook.put("Available_Count",book.getAvailableCount());
-  			addedBook.put("Floor_No",Details.getFloorNo().toString());
-  			addedBook.put("Department",Details.getDepartment().toString());
-  			addedBook.put("Shelve_Number",Details.getShelveNo());
+  			
+  			Book_Floor_Details Floor_Details = (Book_Floor_Details) book.getFloorDetails();
+  			
+  			addedBook.put("Floor_No",Floor_Details.getFloorNo().toString());
+  			addedBook.put("Department",Floor_Details.getDepartment().toString());
+  			addedBook.put("Shelve_Number",Floor_Details.getShelveNo());
   			addedBook.put("Status","NOT_BORROWED");
   			addedBook.put("Message","Successfully Book Added");
           } 

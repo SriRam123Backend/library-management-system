@@ -3,7 +3,7 @@ package Model;
 import Enums.Categories;
 import Enums.FloorNumber;
 
-public class Book_Floor_Details {
+public class Book_Floor_Details{
   
 	FloorNumber FloorNo;
 	int ShelveNo;

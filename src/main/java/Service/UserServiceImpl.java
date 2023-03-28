@@ -282,7 +282,14 @@ public class UserServiceImpl implements UserService{
 				e.getMessage();
 			}
 			books.setPhone_Number(Phone_Number);
+			if(book.getAvailableCount()>0)
+			{
 			book.setAvailableCount(book.getAvailableCount()-1);
+			}
+			else
+			{
+				return null;
+			}
 			System.out.println(book.getAvailableCount());
 			int rs = dao.Borrow_Books(books,book);
 			if(rs != 0)

@@ -55,6 +55,7 @@ public class BorrowBooks extends HttpServlet {
 		
 		Book_Floor_Details Details = BookServiceImpl.getInstance().getFloorDetails(Integer.parseInt(ISBN_No));
 		
+		if(Book != null) {
 		BorrowBookDetails.put("Date_Borrowed",sdfrmt.format(Book.getDate_Borrowed()));
 		BorrowBookDetails.put("Return_Date ",sdfrmt.format(Book.getReturn_Date()));
 		BorrowBookDetails.put("ISBN_No",Book.getISBN_No());
@@ -62,7 +63,11 @@ public class BorrowBooks extends HttpServlet {
 		BorrowBookDetails.put("Department",Details.getDepartment().toString());
 		BorrowBookDetails.put("Shelve_Number",Details.getShelveNo());
 		BorrowBookDetails.put("Status","Book Borrowed");
-		
+		}
+		else
+		{
+			BorrowBookDetails.put("Status","Something went wrong");
+		}
 		response.getWriter().append(BorrowBookDetails.toString());
 		
 	}

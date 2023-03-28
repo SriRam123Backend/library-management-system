@@ -17,12 +17,12 @@ public class DbConnection {
 		DbConnection.dbConnection = dbConnection;
 	}
 
-	public static void getDBConnection() 
+	public static void getDBConnection(String databaseName,String databaseUserName,String databasePassword) 
 	{
 		if(dbConnection == null) {
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Library_Management_System","sriram","sriram"); 
+				dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+databaseName,databaseUserName,databasePassword); 
 			}
 			catch(Exception ex) {
 				System.out.println(ex.getMessage());

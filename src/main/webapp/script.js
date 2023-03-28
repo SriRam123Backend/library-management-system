@@ -1488,10 +1488,21 @@ function BorrowBooks(BorrowBookId,ReturnDate){
 		{	
 			fullBookDetails(BorrowBookId+"")
 			var responseObject = JSON.parse(this.responseText);
+			if(responseObject.Status == "Something went wrong")
+			{
+				 alert("Book already borrowed sorry!");
+				 document.getElementById("UserContainer").removeChild(shadow);
+			}
+			else{
 			document.getElementById("ReturnDate").value="";
 			console.log(responseObject);
+			if(BorrowBookId == undefined){
+				alert("Book already borrowed sorry!");
+				return;
+			}
 			alert("ISBN Number = "+BorrowBookId+" Book is Borrowed Successfully"+"\n"+"Floor : "+responseObject.Floor_No+"\n"+"Department : "+responseObject.Department+"\n"+"Shelf Number : "+responseObject.Shelve_Number)
 		    document.getElementById("UserContainer").removeChild(shadow);
+			}
 		}
 		
 	}

@@ -1894,11 +1894,11 @@ function BankDetails(isbnNo)
 	inputBox.innerHTML = `<form id="aligning"> 
 						   <div class='input-box1'>
                      	   <input class="input1" type='number' id='ISBN_no' autocomplete="off" readonly>
-                     	   <label class="label1" for=''>ISBN Number</label>
+                     	   <label class="label2" for=''>ISBN Number</label>
                      	  </div>   
                      	  <div class='input-box1'>
                      	   <input class="input1" type='number' id='Fine' autocomplete="off" readonly>
-                     	   <label class="label1" for=''>Amount of fine</label>
+                     	   <label class="label2" for=''>Amount of fine</label>
                      	  </div>
                      	  <div class='input-box1'>
                      	   <input class="input1" type='number' required id='CreditCardNumber' autocomplete="off">

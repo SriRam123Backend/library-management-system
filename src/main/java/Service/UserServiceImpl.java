@@ -379,7 +379,7 @@ public class UserServiceImpl implements UserService{
 		   
 		}catch(SQLException err)
 		{
-			err.getMessage();
+			err.printStackTrace();
 		}
 		
 		return 0;

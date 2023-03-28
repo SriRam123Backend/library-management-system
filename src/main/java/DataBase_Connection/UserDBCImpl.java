@@ -244,12 +244,14 @@ public class UserDBCImpl implements UserDBC{
 		pstmt.setString(4,sdfrmt.format(Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant())));
 	    pstmt.setInt(5,Book.getISBN_No());
 	    pstmt.setString(6,Book.getPhone_Number());
-		    
+		
+	    if(rs.next())
+	    {
 	    pstmt1.setInt(1,rs.getInt(1)+1);
 	    pstmt1.setInt(2,Book.getISBN_No());
 	    pstmt1.executeUpdate();
+	    }
 	    
-	    System.out.println(pstmt);
 		result = pstmt.executeUpdate();
 		return result;
 	 }

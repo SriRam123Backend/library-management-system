@@ -1832,8 +1832,9 @@ function returnBooks(Page)
 				if(Page == 1)
 				{
 					 alert("Book is Returned, Thank you");
-					 fullBookDetails(document.getElementById("ISBN_no").value);
 					 document.getElementById("UserContainer").removeChild(shadow);
+					 console.log("trueee");
+					 fullBookDetails(document.getElementById("ISBN_no").value);
 				}
 				else if(Page == 2)
 				{

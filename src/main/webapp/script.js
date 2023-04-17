@@ -1517,7 +1517,7 @@ function BorrowBooks(BorrowBookId,ReturnDate){
 function WantToBeReturnBooks(){
 	
 	$('.summa').hide();
-	$('#ReturnBookDetail').show()
+	$('#ReturnBookDetail').show();
 	document.getElementById("returnBooksDetails").innerHTML=""
 	var name0 ="";
 	var xhr = new XMLHttpRequest();
@@ -1833,12 +1833,14 @@ function returnBooks(Page)
 				{
 					 alert("Book is Returned, Thank you");
 					 document.getElementById("UserContainer").removeChild(shadow);
-					 console.log("trueee");
+					 console.log("true123")
 					 fullBookDetails(document.getElementById("ISBN_no").value);
 				}
 				else if(Page == 2)
 				{
 					alert("Book is Returned, Thank you");
+					console.log("true123")
+					document.getElementById("UserContainer").removeChild(shadow);
 					WantToBeReturnBooks();
 				}
 				
@@ -1941,7 +1943,8 @@ function PayingFine()
 			var responseObject = JSON.parse(this.responseText);
 			if(responseObject.Message=="Successfull")
 			{
-				alert("Fine Payed Successfully")
+				alert("Fine Payed Successfully");
+				document.getElementById("UserContainer").removeChild(shadow);
 				WantToBeReturnBooks();
 				document.getElementById("ISBN_no").value = "";
 	            document.getElementById("Fine").value = "";
